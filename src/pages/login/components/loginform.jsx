@@ -5,6 +5,9 @@ import { post } from "../../../services/api/api.service";
 import { Route } from 'react-router-dom';
 import './formlogin.css'
 function LoginForm() {
+
+
+
   const [cookies, setCookie, removeCookie] = useCookies([
     "jp_net_time",
     "jp_net_user",
@@ -16,15 +19,18 @@ function LoginForm() {
   );
   const [user, setUser] = useState(cookies["jp_net_user"] || null);
 
+  const ver = (values) =>{
+    alert(values);
+  }
 
   const handleFinish = async (values) => {
     try {
       console.log("Datos> ", values);
       const registro = await post({
-        url: "user/login",
+        url: "/user/login",
         data: {
-          Email: values.email,
-          Password: values.password,
+          email: values.email,
+          password: values.password,
         },
       });
       if (registro.id === undefined) {
@@ -51,13 +57,15 @@ function LoginForm() {
           <h2>Iniciar Sesión</h2>
           <form class="form" onSubmit={handleFinish}>
             <input
+              id="email"
+              value="email"
               class="username"
               type="text"
               placeholder="Nombre de usuario"
               required
             />
             <input
-
+              id="password"
               class="username"
               type="password"
               placeholder="Contraseña"
