@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { post } from "../../../services/api/api.service";
-import { Route } from 'react-router-dom';
-import './formlogin.css'
+import "./formlogin.css";
+import { useNavigate } from "react-router-dom";
 function LoginForm() {
-
-
+  let navigate = useNavigate();
+  const [email, setEmail] = useState();
+  const [personid, setPersonID] = useState(null);
+  const [password, setPassword] = useState();
 
   const [cookies, setCookie, removeCookie] = useCookies([
     "jp_net_time",
@@ -14,38 +15,49 @@ function LoginForm() {
     "jp_net_email",
   ]);
 
-  const [timesection, setTimeSection] = useState(
-    cookies["jp_net_time"] || null
-  );
-  const [user, setUser] = useState(cookies["jp_net_user"] || null);
+  useEffect(() => {
+    if (cookies.jp_net_user != null) {
+      navigate("/dashboard");
+      return;
+    } else {
+      removeCookie("jp_net_user");
+      removeCookie("jp_net_email");
+    }
+  }, []);
 
-  const ver = (values) =>{
-    alert(values);
-  }
-
-  const handleFinish = async (values) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      console.log("Datos> ", values);
       const registro = await post({
         url: "/user/login",
         data: {
-          email: values.email,
-          password: values.password,
+          email: email,
+          password: password,
         },
       });
-      if (registro.id === undefined) {
+      //console.log(registro);
+      if (registro.id === null) {
+        setEmail("");
+        setPassword("");
+        alert("No es Usuario o Password Correcta");
         return null;
       } else {
-        setCookie("jp_net_time", 60);
-        setCookie("jp_net_user", registro.id);
-        setUser(registro.Nombre);
-        setTimeSection(60);
-        <Route path="/dashboard"/>
-
+        let id = registro.id;
+        setPersonID(id);
+        setCookie("jp_net_user", id, { path: "/" });
+        setCookie("jp_net_email", email, { path: "/" });
+        navigate("/dashboard");
+        //alert(registro.id);
       }
     } catch (error) {
-      console.error(error);
+      this.setState({
+        email: "",
+        password: "",
+      });
+      //console.error(error);
     }
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -55,10 +67,12 @@ function LoginForm() {
         <div class="signup-classic">
           <h3>JP NET</h3>
           <h2>Iniciar Sesión</h2>
-          <form class="form" onSubmit={handleFinish}>
+          <form class="form" onSubmit={handleSubmit}>
             <input
               id="email"
-              value="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               class="username"
               type="text"
               placeholder="Nombre de usuario"
@@ -66,6 +80,9 @@ function LoginForm() {
             />
             <input
               id="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               class="username"
               type="password"
               placeholder="Contraseña"

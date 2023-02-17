@@ -2,6 +2,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import {Routes } from "react-router";
 import './css/App.css'
 import {PageLogin}  from './pages/login'
+import Layout from './pages/layout';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <Route path='/login' element={ <PageLogin/>} exact />
     </Routes>
     <Routes>
-        <Route path='/dashboard' element={ <PageLogin/>} exact />
+        <Route path='/dashboard' element={ <Layout/>} exact />
     </Routes>
     </BrowserRouter>
 
