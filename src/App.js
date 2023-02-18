@@ -3,6 +3,7 @@ import {Routes } from "react-router";
 import './css/App.css'
 import {PageLogin}  from './pages/login'
 import Layout from './pages/layout';
+import {Home} from './pages/Home/Home'
 
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
     </Routes>
     <Routes>
         <Route path='/dashboard' element={ <Layout/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/home' element={ <Home/>} exact />
     </Routes>
     </BrowserRouter>
 
