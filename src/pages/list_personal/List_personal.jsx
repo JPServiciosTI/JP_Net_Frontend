@@ -1,7 +1,7 @@
 import React from 'react'
 import {Sidebar} from '../../components/Side/Sidebar'
 import { Navbar } from '../../components/navbar/Navbar'
-import {ListPP} from '../../components/table/Table'
+import {ListPP} from '../../components/table_personal/Table_Personal'
 import './list.css'
 
 function ListP() {
@@ -10,9 +10,9 @@ function ListP() {
         <Sidebar/>
       <div className="general">
         <Navbar/>
+        <div className="listTitle">LISTADO DE PERSONAL</div>
         <div className="listContainer">
-           
-            <div className="listTitle">Lista de Personal</div>
+            
             <ListPP />
         </div>
        </div>

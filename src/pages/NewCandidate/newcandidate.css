@@ -1,23 +1,21 @@
-.list{
+.newCandidate{
     display: flex;
     width: 100%;
-
 }
- .general{
-    flex:6;
+.newCandi{
+flex: 6;
 }
-.listContainer {
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
-    box-shadow: 2px 4px 15px 1px #2F48A7;
-    padding: 20px;
-    margin: 20px;
-}
-.listTitle {
+.candidate-title{
     -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
     box-shadow: 2px 4px 15px 1px #2F48A7;
     padding: 20px;
     margin: 20px;
     color: #2F48A7;
-    font-weight: bold;
-    text-align: center;
+    font-weight: bolder;
+}
+.newCandiCont{
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
+    box-shadow: 2px 4px 15px 1px #2F48A7;
+    padding: 20px;
+    margin: 20px;
 }

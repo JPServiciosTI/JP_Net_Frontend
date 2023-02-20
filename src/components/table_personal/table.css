@@ -1,12 +1,12 @@
-.tableHead{
-    padding: 100px;
-}
-.tableHead .tableCell{
+.table span{
     font-weight: bolder;
-    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 15px;
+    color: #2F48A7;
+    font-size: 15px;
 }
 .table .cellWrapper{
-    display: fle;
+    display: flex;
     align-items: center;
 }
 .table .cellWrapper .image{
@@ -22,7 +22,7 @@
     padding: 10px;
 }
 .tableCell a:hover{
-    background-color: #576bbb;
+    background-color: #2F48A7;
     color: #fff;
     font-weight: 500;
 }

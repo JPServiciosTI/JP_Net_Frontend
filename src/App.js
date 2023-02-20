@@ -6,6 +6,7 @@ import Layout from './pages/layout';
 import {Home} from './pages/Home/Home'
 import { ListP } from './pages/list_personal/List_personal';
 import { Newpersonal } from './pages/NewPersonal/Newpersonal';
+import NewCandidate from './pages/NewCandidate/NewCandidate';
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
     </Routes>
     <Routes>
         <Route path='/NewPersonal' element={ <Newpersonal/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/NewCandidate' element={ <NewCandidate/>} exact />
     </Routes>
     </BrowserRouter>
 

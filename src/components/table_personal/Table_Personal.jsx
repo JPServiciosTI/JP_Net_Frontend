@@ -30,10 +30,10 @@ const ListPP=()=> {
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
       <TableHead>
         <TableRow>
-          <TableCell className='tableCell'>Nombres</TableCell>
-          <TableCell className='tableCell'>Apellidos</TableCell>
-          <TableCell className='tableCell'>Cargo</TableCell>
-          <TableCell className='tableCell'>DNI</TableCell>
+          <TableCell className='tableCell'><span>Nombres</span></TableCell>
+          <TableCell className='tableCell'><span>Apellidos</span></TableCell>
+          <TableCell className='tableCell'><span>Cargo</span></TableCell>
+          <TableCell className='tableCell'><span>DNI</span></TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
