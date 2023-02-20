@@ -1,0 +1,19 @@
+.list{
+    display: flex;
+    width: 100%;
+
+}
+ .general{
+    flex:6;
+}
+.listContainer {
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
+    box-shadow: 2px 4px 15px 1px #2F48A7;
+    padding: 20px;
+    margin: 20px;
+}
+.listTitle {
+    font-weight: bolder;
+    color: #2F48A7;
+    margin-bottom: 15px;
+}

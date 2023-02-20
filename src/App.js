@@ -4,6 +4,8 @@ import './css/App.css'
 import {PageLogin}  from './pages/login'
 import Layout from './pages/layout';
 import {Home} from './pages/Home/Home'
+import { ListP } from './pages/list_personal/List_personal';
+import { Newpersonal } from './pages/NewPersonal/Newpersonal';
 
 
 function App() {
@@ -18,6 +20,12 @@ function App() {
     </Routes>
     <Routes>
         <Route path='/home' element={ <Home/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/listPersonal' element={ <ListP/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/NewPersonal' element={ <Newpersonal/>} exact />
     </Routes>
     </BrowserRouter>
 
