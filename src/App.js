@@ -7,6 +7,8 @@ import {Home} from './pages/Home/Home'
 import { ListP } from './pages/list_personal/List_personal';
 import { Newpersonal } from './pages/NewPersonal/Newpersonal';
 import NewCandidate from './pages/NewCandidate/NewCandidate';
+import { Tareo } from './pages/NewTareo/Tareo'
+import { ExtraTime } from './pages/NewExtraTime/ExtraTime';
 
 
 function App() {
@@ -30,6 +32,12 @@ function App() {
     </Routes>
     <Routes>
         <Route path='/NewCandidate' element={ <NewCandidate/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/NewTareo' element={ <Tareo/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/NewExtraTime' element={ <ExtraTime/>} exact />
     </Routes>
     </BrowserRouter>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Personal_modal from '../../components/modal_NPersonal/Personal_modal'
+import { NewPersonal_main } from '../../components/modal_NPersonal/NewPersonal_main'
 import { Navbar } from '../../components/navbar/Navbar'
 import { Sidebar } from '../../components/Side/Sidebar'
 import './newpersonal.css'
@@ -12,7 +12,7 @@ function Newpersonal() {
         <Navbar/>
         <div className='personal-title'>Ingrese los datos del nuevo trabajador</div>
         <div className="newContainer">
-            <Personal_modal/>
+            <NewPersonal_main/>
         </div>
     </div>
    </div>

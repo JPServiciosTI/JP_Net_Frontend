@@ -1,0 +1,28 @@
+.formTime{
+    width: 180px; 
+    display: inline-block;
+    margin: 20px;
+}
+.formTime label{
+    font-weight: bold;
+}
+.controlTime{
+    margin-top: 8px;
+    border-color: #2F48A7;
+}
+.controlTime:hover{
+    -webkit-box-shadow: 2px 4px 2px 1px rgba(189, 200, 230, 0.47);
+    box-shadow: 2px 2px 15px 1px #2F48A7;
+}
+.buttonForm{
+    width: 100%;
+    background-color: #2F48A7;
+    border: none;
+    font-weight: 400;
+    
+}
+.buttonForm:hover{
+    background-color: #202f6b;
+    border: none;
+    
+}
