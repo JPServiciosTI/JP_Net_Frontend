@@ -23,19 +23,28 @@ const Step3 = props => {
           </div>
           <div className="personalC">
           <Label for="campodeestudio">Campo de estudio: <span>*</span></Label>
-          <select name="campodeestudio" id="campodeestudio">
-            <option value="">CIENCIAS DE LA SALUD</option>
-            <option value="">CIENCIAS SOCIALES</option>
-            <option value="">CIENCIAS FORMALES</option>
-            <option value="">CIENCIAS INGENIERIA</option>
-            <option value="">TENOLOGIA</option>
+          <select name="campodeestudio" id="campodeestudio" value={props.campodeestudio} 
+            onChange={props.handleChange}>
+            <option value={props.optioncampo} 
+            onChange={props.handleChange}>CIENCIAS DE LA SALUD</option>
+            <option value={props.optioncampo} 
+            onChange={props.handleChange}>CIENCIAS SOCIALES</option>
+            <option value={props.optioncampo} 
+            onChange={props.handleChange}>CIENCIAS FORMALES</option>
+            <option value={props.optioncampo} 
+            onChange={props.handleChange}>CIENCIAS INGENIERIA</option>
+            <option value={props.optioncampo} 
+            onChange={props.handleChange}>TENOLOGIA</option>
           </select>
           </div>
         <div className="personalC">
           <Label for="cargo">Cargo: <span>*</span></Label>
-          <select name="cargo" id="cargo">
-            <option value=""></option>
-            <option value=""></option>
+          <select name="cargo" id="cargo" value={props.cargo} 
+            onChange={props.handleChange}>
+            <option value={props.optioncargo} 
+            onChange={props.handleChange}></option>
+            <option value={props.optioncargo} 
+            onChange={props.handleChange}></option>
           </select>
           </div>
           <div className="personalC">
@@ -72,7 +81,7 @@ const Step3 = props => {
           />
           </div>
           <div className="personalC">
-          <Label for="fechafincontrato">Fecha fin de Contrato:: <span>*</span></Label>
+          <Label for="fechafincontrato">Fecha fin de Contrato: <span>*</span></Label>
           <Input
             type="date"
             name="fechafincontrato"

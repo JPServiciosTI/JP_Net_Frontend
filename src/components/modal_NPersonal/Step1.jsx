@@ -87,7 +87,7 @@ const Step1 = props => {
           />
           </div>
            <div className="personalC">
-           <Label for="estadocivil">Estado civil: <span>*</span></Label>
+           <Label for="estadocivil">Estado civil:</Label>
            <Input
             type="text"
             name="estadocivil"
@@ -131,8 +131,9 @@ const Step1 = props => {
           />
           </div>
           
-         
-           <Input
+         <div className="personalC">
+         <Label for="departamento">Departamento: </Label>
+         <Input
             disabled
             type="text"
             name="departamento"
@@ -141,7 +142,11 @@ const Step1 = props => {
             value={props.departamento} // Prop: los datos de entrada de correo electrónico
             onChange={props.handleChange} // Prop: Pone los datos en el estado
           />
-           <Input
+         </div>
+
+         <div className="personalC">
+         <Label for="provincia">Provincia:</Label>
+         <Input
             disabled
             type="text"
             name="provincia"
@@ -150,7 +155,11 @@ const Step1 = props => {
             value={props.provincia} // Prop: los datos de entrada de correo electrónico
             onChange={props.handleChange} // Prop: Pone los datos en el estado
           />
-          <Input
+         </div>
+
+        <div className="personalC">
+        <Label for="distrito">Distrito:</Label>
+        <Input
             disabled
             type="text"
             name="distrito"
@@ -159,6 +168,9 @@ const Step1 = props => {
             value={props.distrito} // Prop: los datos de entrada de correo electrónico
             onChange={props.handleChange} // Prop: Pone los datos en el estado
           />
+        </div>
+           
+          
         </FormGroup>
       </>
     );

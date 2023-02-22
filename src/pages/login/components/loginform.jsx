@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { post } from "../../../services/api/api.service";
-import "./formlogin.css";
+import './formlogin.css'
 import { useNavigate } from "react-router-dom";
 function LoginForm() {
   let navigate = useNavigate();
@@ -61,7 +61,7 @@ function LoginForm() {
   };
 
   return (
-    <section>
+    <section class="bodyLogin">
       <div class="signup">
         <div class="signup-connect"></div>
         <div class="signup-classic">
@@ -89,7 +89,7 @@ function LoginForm() {
               required
             />
 
-            <button type="submit" class="btn">
+            <button type="submit" class="btn-l">
               Ingresar
             </button>
           </form>
