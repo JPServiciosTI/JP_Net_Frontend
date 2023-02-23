@@ -9,6 +9,7 @@ import { Newpersonal } from './pages/NewPersonal/Newpersonal';
 import NewCandidate from './pages/NewCandidate/NewCandidate';
 import { Tareo } from './pages/NewTareo/Tareo'
 import { ExtraTime } from './pages/NewExtraTime/ExtraTime';
+import {ListTareo} from './pages/list_tareo/ListTareo';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
     </Routes>
     <Routes>
         <Route path='/newextratime' element={ <ExtraTime/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/ListTareo' element={ <ListTareo/>} exact />
     </Routes>
     </BrowserRouter>
 
