@@ -5,6 +5,7 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';    
 import {BarraProgreso} from './BarraProgreso'
+import './npersonal.css'
 
 class NewPersonal_main extends Component{
     constructor(props) {
@@ -43,7 +44,11 @@ class NewPersonal_main extends Component{
           fechafincontrato:"",
           sueldobase:"",
           cispp:"",
-          nhijos:""
+          nhijos:"",
+          tipodevia:"",
+          nombredevia:"",
+          tipolocalidad:"",
+          nombrelocalidad:""
 
 
         };
@@ -98,8 +103,8 @@ class NewPersonal_main extends Component{
 
         if (currentStep !== 1) {
           return (
-            <Button color="secondary float-left" onClick={this._prev}>
-              Previous
+            <Button color="danger float-left" onClick={this._prev}>
+              Atrás
             </Button>
           );
         }
@@ -111,7 +116,7 @@ class NewPersonal_main extends Component{
         if (currentStep < 3) {
           return (
             <Button color="primary float-right" onClick={this._next}>
-              Next
+              Siguiente
             </Button>
           );
         }
@@ -121,7 +126,7 @@ class NewPersonal_main extends Component{
       get submitButton() {
         let currentStep = this.state.currentStep;
         if (currentStep > 2) {
-          return <Button color="primary float-right">Submit</Button>;
+          return <Button color="success float-right">Guardar</Button>;
         }
         return null;
       }
@@ -140,22 +145,54 @@ class NewPersonal_main extends Component{
                     currentStep={this.state.currentStep}
                     handleChange={this.handleChange}
                     nombre={this.state.nombre}
+                    apellidoPaterno={this.state.apellidoPaterno}
+                    apellidoMaterno={this.state.apellidoMaterno}
+                    dni={this.state.dni}
+                    telefono={this.state.telefono}
+                    telefonofijo={this.state.telefonofijo}
+                    email={this.state.email}
+                    estadocivil={this.state.estadocivil}
+                    nhijos={this.state.nhijos}
+                    fechadenacimiento={this.state.fechadenacimiento}
+                    ubigeo={this.state.ubigeo}
+                    departamento={this.state.departamento}
+                    provincia={this.state.provincia}
+                    distrito={this.state.distrito}
                   />
                   <Step2
                     currentStep={this.state.currentStep}
                     handleChange={this.handleChange}
-                    nombre={this.state.apellidoPaterno}
+                    tipodevia={this.state.tipodevia}
+                    nombredevia={this.state.nombredevia}
+                    tipolocalidad={this.state.tipolocalidad}
+                    nombrelocalidad={this.state.nombrelocalidad}
+                    contactodeemergencia={this.state.contactodeemergencia}
+                    numerodeemergencia={this.state.numerodeemergencia}
+                    brevete={this.state.brevete}
+                    idTipoDeSangre={this.state.idTipoDeSangre}
+                    alergias={this.state.alergias}
+                    idfondodepension={this.state.idfondodepension}
+                    cispp={this.state.cispp}
                   />
                   <Step3
                     currentStep={this.state.currentStep}
                     handleChange={this.handleChange}
-                    nombre={this.state.apellidoMaterno}
+                    campodeestudio={this.state.campodeestudio}
+                    aniosexperiencia={this.state.aniosexperiencia}
+                    sueldobase={this.state.sueldo}
+                    fechainicialcontrato={this.state.fechainicialcontrato}
+                    fechafincontrato={this.state.fechafincontrato}
+
+
                   />
                 </CardBody>
                 <CardFooter>
+                  <div className="nbutton">
                   {this.previousButton}
                   {this.nextButton}
                   {this.submitButton}
+                  </div>
+                  
                 </CardFooter>
               </Card>
             </Form>

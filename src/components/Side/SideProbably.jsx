@@ -18,7 +18,7 @@ import "./probably.css";
 
 
 
-function Sidebar() {
+function SideProbably() {
     
     
   return (
@@ -253,4 +253,4 @@ function Sidebar() {
   );
 }
 
-export { Sidebar };
+export { SideProbably };

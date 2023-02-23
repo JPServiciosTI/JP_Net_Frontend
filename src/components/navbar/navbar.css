@@ -1,29 +1,45 @@
 /*CSS para componente NavBar*/
 .navbar {
-	height: 70px;
+	height: 60px;
 	display: flex;
 	align-items: center;
 	font-size: 14px;
 	color: #fff;
-	background-color: #2F48A7;
+	background-color: #fff;
+	border-radius: 2px;
+	-webkit-box-shadow: 2px 1px 1px 1px rgba(189, 200, 230, 0.47);
+    box-shadow: 1px 1px 5px 1px #2F48A7;
+    
 }
 .navbar .wrapper {
 	width: 100%;
-	padding: 20px;
+	padding: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: #fff;
+	color: #2F48A7;
+}
+.navbar .hamburguer{
+	display: flex;
+	font-weight: bold;
+	font-size: 25px;
+	margin-left: 25px;
+}
+.navbar .wrapper .part1{
+	width: 35%;
+	display: flex;
+	justify-content: space-between;
 }
 .navbar .wrapper .search {
+	margin-left: 15px;
 	display: flex;
-	align-items: center;
-	border: 0.5px solid #fff;
+	width: 200px;
+	border: 0.5px solid #2F48A7;
 	border-radius: 2px;
 	padding: 3px;
-	border-color: #000;
+	border-color: #2F48A7;
 	color: #000000;
-	background-color: #fff;
+
 	
 }
 .navbar .wrapper .search input {
@@ -33,7 +49,8 @@
 }
 .navbar .wrapper .search input::placeholder {
 	font-size: 12px;
-	color: #000;
+	color: #2F48A7;
+	
 }
 .navbar .wrapper .items {
 	display: flex;
@@ -42,16 +59,24 @@
 .navbar .wrapper .items .item {
 	display: flex;
 	align-items: center;
-	margin-right: 20px;
+	margin-right: 35px;
 	position: relative;
+	
+}
+.navbar .wrapper .items .item:hover {
+	cursor: pointer;
+	color: #576bbb;
+	
 }
 .navbar .wrapper .items .item .icon {
-	font-size: 20px;
+	font-size: 24px;
 }
+
 .navbar .wrapper .items .item .avatar {
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
+	border-color: #2F48A7;
 }
 .navbar .wrapper .items .item .counter {
 	width: 15px;

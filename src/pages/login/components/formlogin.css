@@ -1,18 +1,8 @@
 
 /*css para Login*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-html,
-body {
-  height: 100%;
-  font-family: Open Sans;
-}
 
-body {
-  background: #DDDDDD;
+section {
+  background-color: #DDDDDD;
 }
 .username{
   margin-top: 15px;
@@ -39,7 +29,7 @@ body {
 /*--------------------
 Buttons
 --------------------*/
-.btn {
+.btn-l {
   display: block;
   background: #2F48A7;
   color: #fff;

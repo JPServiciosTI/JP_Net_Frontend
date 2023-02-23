@@ -1,7 +1,10 @@
 .home{
-	display: flex;
 }
 .homeContainer{
-	flex: 6;
+	display: flex;
 	background-color: aqua;
+}
+.homeMain{
+	flex: 6;
+	
 }

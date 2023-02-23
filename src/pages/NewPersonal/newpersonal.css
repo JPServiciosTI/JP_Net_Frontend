@@ -1,9 +1,11 @@
 .newPersonal{
-  display: flex;
   width: 100%;
 }
 .newCont{
-  flex: 6;
+  display: flex;
+}
+.personalContainer{
+  width: 100%;
 }
 .personal-title{
   -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
