@@ -1,4 +1,5 @@
 import React from "react";
+import { useCookies } from "react-cookie";
 import {
   AiOutlineTeam,
   AiOutlineFundProjectionScreen,
@@ -13,6 +14,7 @@ import {
 } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
 import { MdOutlineSecurity } from "react-icons/md";
+import { useNavigate } from "react-router";
 import "./Sidebar.css";
 
 
@@ -28,6 +30,19 @@ for (var i = 0; i < arrow.length; i++) {
   });
 }
 
+let navigate = useNavigate();
+const [cookies, setCookie, removeCookie] = useCookies([
+  "jp_net_time",
+  "jp_net_user",
+  "jp_net_email",
+]);
+
+const onClickExit = () =>{
+  removeCookie("jp_net_user");
+  removeCookie("jp_net_email");
+  alert("HOLAAAA");
+  navigate("/login");
+}
     
   return (
     <div className="containerSide">
@@ -53,7 +68,7 @@ for (var i = 0; i < arrow.length; i++) {
           </li>
           <li>
             <div class="iocn-link">
-              <a href="#">
+              <a href="/newpersonal">
                 <i className="blank" >
                 <AiOutlineTeam />
                 </i>
@@ -65,7 +80,7 @@ for (var i = 0; i < arrow.length; i++) {
             </div>
             <ul class="sub-menu">
               <li>
-                <a class="link_name" href="#">
+               <a class="link_name" href="#">
                   Recursos Humanos
                 </a>
               </li>
@@ -246,13 +261,16 @@ for (var i = 0; i < arrow.length; i++) {
             </ul>
           </li>
           <li>
+            <button type="submit" onClick={onClickExit}>
             <div class="profile-details">
               <div class="profile-content"></div>
               <div class="name-job">
                 <div class="profile_name">Salir</div>
               </div>
-              <i ><ImExit/></i>
-            </div>
+              <i ><ImExit /></i>
+            </div>              
+            </button>
+
           </li>
         </ul>
       </div>

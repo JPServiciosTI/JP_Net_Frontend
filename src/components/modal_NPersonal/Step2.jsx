@@ -166,8 +166,8 @@ const Step2 = props => {
           </select>
           </div>
           <div className="personalC smallp">
-          <Label for="tipodesangre">Tipo de sangre: <span>*</span></Label>
-          <select name="tipodesangre" id="tipodesangre" value={props.tipodesangre} 
+          <Label for="idTipoDeSangre">Tipo de sangre: <span>*</span></Label>
+          <select name="idTipoDeSangre" id="idTipoDeSangre" value={props.idTipoDeSangre} 
             onChange={props.handleChange}>
             <option value={props.optiontipodesangre} 
             onChange={props.handleChange}>O+</option>

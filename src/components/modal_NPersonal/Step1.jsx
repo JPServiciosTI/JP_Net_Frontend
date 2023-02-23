@@ -4,7 +4,7 @@ import { FormGroup, Label, Input } from "reactstrap";
 const Step1 = props => {
     if (props.currentStep !== 1) {
       return null;
-    }z
+    }
   
     return (
       <>
