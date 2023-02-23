@@ -1,0 +1,7 @@
+.listT{
+    display: flex;
+    width: 100%;
+}
+.lgeneral{
+    flex: 6;
+}
