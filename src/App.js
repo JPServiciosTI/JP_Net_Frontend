@@ -19,25 +19,25 @@ function App() {
         <Route path='/login' element={ <PageLogin/>} exact />
     </Routes>
     <Routes>
-        <Route path='/dashboard' element={ <Layout/>} exact />
+        <Route path='/dashboard' element={ <Home/>} exact />
     </Routes>
     <Routes>
         <Route path='/home' element={ <Home/>} exact />
     </Routes>
     <Routes>
-        <Route path='/listPersonal' element={ <ListP/>} exact />
+        <Route path='/listpersonal' element={ <ListP/>} exact />
     </Routes>
     <Routes>
-        <Route path='/NewPersonal' element={ <Newpersonal/>} exact />
+        <Route path='/newpersonal' element={ <Newpersonal/>} exact />
     </Routes>
     <Routes>
-        <Route path='/NewCandidate' element={ <NewCandidate/>} exact />
+        <Route path='/newcandidate' element={ <NewCandidate/>} exact />
     </Routes>
     <Routes>
-        <Route path='/NewTareo' element={ <Tareo/>} exact />
+        <Route path='/newtareo' element={ <Tareo/>} exact />
     </Routes>
     <Routes>
-        <Route path='/NewExtraTime' element={ <ExtraTime/>} exact />
+        <Route path='/newextratime' element={ <ExtraTime/>} exact />
     </Routes>
     </BrowserRouter>
 
