@@ -1,30 +1,79 @@
-import React from "react";
-import { Modal, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import React, { useMemo } from 'react'
+import DataTable from 'react-data-table-component';
+import styled from 'styled-components';
 
-const ListTT = () => {
+
+
+function Table_Tareo() {
+
+  const handleButtonClick = () => {
+		
+		console.log('clicked');
+	};
+
+  const columns= useMemo( ()=>[
+    {
+      title:"Nombres",
+      selector:"nombres",
+      sortable:true
+    },
+    {
+      title:"Apellidos",
+      selector:"apellidos",
+      sortable:true
+    },
+    {
+      title:"DNI",
+      selector:"dni",
+      sortable:true
+    },
+    {
+      title:"Tareo",
+      cell: () => <button onClick={handleButtonClick}>Registrar</button>,
+				ignoreRowClick: true,
+				allowOverflow: true,
+				button: true,
+    },
+    {
+      title:"Licencia con goce",
+      cell: () => <button onClick={handleButtonClick}>Registrar</button>,
+				ignoreRowClick: true,
+				allowOverflow: true,
+				button: true,
+    },
+    {
+      title:"Licencia sin goce",
+      cell: () => <button onClick={handleButtonClick}>Registrar</button>,
+				ignoreRowClick: true,
+				allowOverflow: true,
+				button: true,
+    }
+    , {
+      title:"Horas extras",
+      cell: () => <button onClick={handleButtonClick}>Registrar</button>,
+				ignoreRowClick: true,
+				allowOverflow: true,
+				button: true,
+    }
+   
+
+  ],
+  [],);
+
+  const tabla=[
+    {nombres:"Brando", apellidos:"Pinto Checya", dni:70471667},
+    {nombres:"Brenda", apellidos:"Checya Pinto", dni:70472216},
+
+  ];
+
   return (
-    <>
-     
-      <td>
-        <OverlayTrigger overlay={<Tooltip id={`tooltip-top`}>Edit</Tooltip>}>
-          <button
-            className="btn text-warning btn-act"
-            data-toggle="modal"
-          >
-            <i className="material-icons">&#xE254;</i>
-          </button>
-        </OverlayTrigger>
-        <OverlayTrigger overlay={<Tooltip id={`tooltip-top`}>Delete</Tooltip>}>
-          <button
-            className="btn text-danger btn-act"
-            data-toggle="modal"
-          >
-            <i className="material-icons">&#xE872;</i>
-          </button>
-        </OverlayTrigger>
-      </td>
-    </>
-  );
-};
+    <DataTable
+    title="Registros"
+    data={tabla}
+    col
+    columns={columns}
+    />
+  )
+}
 
-export { ListTT };
+export  {Table_Tareo}
