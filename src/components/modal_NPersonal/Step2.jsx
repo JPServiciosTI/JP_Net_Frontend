@@ -169,21 +169,21 @@ const Step2 = props => {
           <Label for="idTipoDeSangre">Tipo de sangre: <span>*</span></Label>
           <select name="idTipoDeSangre" id="idTipoDeSangre" value={props.idTipoDeSangre} 
             onChange={props.handleChange}>
-            <option value={props.optiontipodesangre} 
+            <option value={props.idTipoDeSangre} 
             onChange={props.handleChange}>O+</option>
-            <option value={props.optiontipodesangre} 
+            <option value={props.idTipoDeSangre} 
             onChange={props.handleChange}>O-</option>
-            <option value={props.optiontipodesangre} 
+            <option value={props.idTipoDeSangre} 
             onChange={props.handleChange}>A+</option>
-            <option value={props.optiontipodesangre} 
+            <option value={props.idTipoDeSangre} 
             onChange={props.handleChange}>A-</option>
-            <option value={props.optiontipodesangre} 
+            <option value={props.idTipoDeSangre} 
             onChange={props.handleChange}>B+</option>
-            <option value={props.optiontipodesangre} 
+            <option value={props.idTipoDeSangre} 
             onChange={props.handleChange}>B-</option>
-            <option value={props.optiontipodesangre} 
+            <option value={props.idTipoDeSangre} 
             onChange={props.handleChange}>AB+</option>
-            <option value={props.optiontipodesangre} 
+            <option value={props.idTipoDeSangre} 
             onChange={props.handleChange}>AB-</option>
           </select>
           </div>

@@ -158,7 +158,7 @@ class NewPersonal_main extends Component {
           nombreDeVia: nombredevia,
           idTipoDeLocalidad: idTipoDeLocalidad,
           nombreLocalidad: nombrelocalidad,
-        },
+        }
       });
       //console.log(registro);
       if (registro.id === null) {
