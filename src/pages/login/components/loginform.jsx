@@ -17,7 +17,7 @@ function LoginForm() {
 
   useEffect(() => {
     if (cookies.jp_net_user != null) {
-      navigate("/dashboard");
+      navigate("/home");
       return;
     } else {
       removeCookie("jp_net_user");
@@ -46,7 +46,7 @@ function LoginForm() {
         setPersonID(id);
         setCookie("jp_net_user", id, { path: "/" });
         setCookie("jp_net_email", email, { path: "/" });
-        navigate("/dashboard");
+        navigate("/home");
         //alert(registro.id);
       }
     } catch (error) {
