@@ -56,6 +56,7 @@ const ListPP=()=> {
           <TableCell className='tableCell'><span>Apellidos</span></TableCell>
           <TableCell className='tableCell'><span>Cargo</span></TableCell>
           <TableCell className='tableCell'><span>DNI</span></TableCell>
+          <TableCell className='tableCell'><span>Accion</span></TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
