@@ -63,12 +63,10 @@ function Candidato_modal() {
       </div>   
       <div className="personalC">
       <Label for="email">Cargo a optar: <span>*</span></Label>
-      <Input
-        type="text"
-        name="text"
-        id="text"
-        placeholder="Cargo a optar"
-      />
+      <select name="cargooptar" id="cargooptar">
+        <option value=""></option>
+        <option value=""></option>
+      </select>
       </div> 
       <div className="personalC">
       <Label for="email">Pretensión Salarial: <span>*</span></Label>

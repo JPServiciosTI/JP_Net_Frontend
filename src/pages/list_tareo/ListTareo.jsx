@@ -1,8 +1,9 @@
 import React from 'react'
 import { Sidebar } from '../../components/Side/Sidebar'
 import { Navbar } from '../../components/navbar/Navbar'
+import {Table_Tareo} from '../../components/table_tareo/Table_Tareo'
 import './list_tareo.css'
-import Tareo_List from '../../components/table_tareo/Tareo_List'
+
 
 function ListTareo() {
   return (
@@ -11,12 +12,7 @@ function ListTareo() {
       <div className="lgeneral">
         <Navbar />
         <div className="listContainer">
-          <div className="container-xl">
-            <div className="table-responsive">
-              <div className="table-wrapper"></div>
-              <Tareo_List/>
-            </div>
-          </div>
+          <Table_Tareo/>
         </div>
       </div>
     </div>
