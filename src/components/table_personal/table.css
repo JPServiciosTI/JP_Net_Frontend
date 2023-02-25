@@ -22,7 +22,7 @@
     padding: 10px;
 }
 .tableCell a:hover{
-    background-color: #2F48A7;
-    color: #fff;
+   color: #2F48A7;
+   font-weight: bold;
     font-weight: 500;
 }

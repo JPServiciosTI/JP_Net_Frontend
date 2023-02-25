@@ -16,6 +16,7 @@ const ListPP=()=> {
           apellidos: "Pinto Checya",
           cargo: "TI",
           dni: "70471667  ",
+          cell: () => <button>Registrar</button>,
         },
         {
           img:"https://cdn-icons-png.flaticon.com/512/4128/4128262.png",
@@ -34,6 +35,7 @@ const ListPP=()=> {
           <TableCell className='tableCell'><span>Apellidos</span></TableCell>
           <TableCell className='tableCell'><span>Cargo</span></TableCell>
           <TableCell className='tableCell'><span>DNI</span></TableCell>
+          <TableCell className='tableCell'><span>Accion</span></TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -49,6 +51,7 @@ const ListPP=()=> {
             <TableCell className='tableCell'><a href="">{row.apellidos}</a></TableCell>
             <TableCell className='tableCell'><a href="">{row.cargo}</a></TableCell>
             <TableCell className='tableCell'><a href="">{row.dni}</a></TableCell>
+            <TableCell className='tableCell'><a href="">{row.cell}Agergar</a></TableCell>
           </TableRow>
         ))}
       </TableBody>
