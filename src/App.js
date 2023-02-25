@@ -41,7 +41,7 @@ function App() {
         <Route path='/newextratime' element={ <ExtraTime/>} exact />
     </Routes>
     <Routes>
-        <Route path='/ListTareo' element={ <ListTareo/>} exact />
+        <Route path='/verTareoHistorico/:idEmpleado' element={ <ListTareo/>} exact />
     </Routes>
     </BrowserRouter>
 

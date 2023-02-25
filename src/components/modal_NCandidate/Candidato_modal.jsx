@@ -185,7 +185,21 @@ let cargado = false;
           console.log(salarioTentativo);
         }}
       />
-      </div> 
+      </div>
+
+      <div className="personalC">
+      <Label for="meses">Meses de Experiencia:<span>*</span></Label>
+      <Input
+        type="number"
+        name="meses"
+        id="meses"
+        placeholder="Meses de Experiencia"
+        onChange={(e)=>{
+          setMesesDeExperiencia(e.target.value);
+          console.log(mesesDeExperiencia);
+        }}
+      />
+      </div>
       <div className="personalC">
       <Label for="linkCv">Link Del CV en Drive: <span>*</span></Label>
       <Input
