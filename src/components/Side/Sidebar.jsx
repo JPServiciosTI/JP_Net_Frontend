@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiAnalyse, BiSearch } from "react-icons/bi";
+import { useCookies } from "react-cookie";
 import {
   AiOutlineTeam,
   AiOutlineFundProjectionScreen,
@@ -17,6 +18,7 @@ import {
 } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
 import { MdOutlineSecurity } from "react-icons/md";
+import { useNavigate } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { SubMenu } from './SubMenu'
 import './Sidebar.css';
@@ -190,6 +192,19 @@ const Sidebar=()=> {
       },
     },
   };
+let navigate = useNavigate();
+const [cookies, setCookie, removeCookie] = useCookies([
+  "jp_net_time",
+  "jp_net_user",
+  "jp_net_email",
+]);
+
+const onClickExit = () =>{
+  removeCookie("jp_net_user");
+  removeCookie("jp_net_email");
+  alert("HOLAAAA");
+  navigate("/login");
+}
     
   return (
     <>
