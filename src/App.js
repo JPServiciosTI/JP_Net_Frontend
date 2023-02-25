@@ -33,13 +33,6 @@ function App() {
         <Route path='/newcandidate' element={ <NewCandidate/>} exact />
     </Routes>
     <Routes>
-<<<<<<< HEAD
-        <Route path='/newtareo' element={ <Tareo/>} exact />
-    </Routes>
-    <Routes>
-        <Route path='/newextratime' element={ <ExtraTime/>} exact />
-    </Routes>
-    <Routes>
         <Route path='/verTareoHistorico/:idEmpleado' element={ <ListTareo/>} exact />
     </Routes>
     </BrowserRouter>

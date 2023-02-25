@@ -20,6 +20,24 @@ import { useNavigate } from 'react-router';
 
 const ListPP=()=> {
 
+  const rows = [
+    {
+      img:"https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+      nombres: "Brando Lugger",
+      apellidos: "Pinto Checya",
+      cargo: "TI",
+      dni: "70471667  ",
+      cell: () => <button>Registrar</button>,
+    },
+    {
+      img:"https://cdn-icons-png.flaticon.com/512/4128/4128262.png",
+      nombres: "Brando Lugger",
+      apellidos: "Pinto Checya",
+      cargo: "TI",
+      dni: "70471667  ",
+    },
+  ];
+
   let navigate = useNavigate();
 
   const [cookies, setCookie, removeCookie] = useCookies(["jp_net_idEmpleadoParaTareo"]);
@@ -102,7 +120,7 @@ const ListPP=()=> {
     <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={rows.length}
+        count={DatosEmpleado.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
