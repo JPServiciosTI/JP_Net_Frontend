@@ -87,11 +87,12 @@ function Table_Tareo() {
             </TableCell>
             <TableCell className='tableCell'><a href="">{row.apellidos}</a></TableCell>
             <TableCell className='tableCell'><a href="">{row.cargo}</a></TableCell>
-            <TableCell className='tableCell btn'><button onClick={handleShow2} data-toggle="modal2">{row.cell}<BiAddToQueue className='tablei'/></button></TableCell>
-            <TableCell className='tableCell btn'><button onClick={handleShow3} data-toggle="modal3">{row.cell}<BiAddToQueue className='tablei'/></button></TableCell>
-            <TableCell className='tableCell btn'><button onClick={handleShow4} data-toggle="modal4">{row.cell}<BiAddToQueue className='tablei'/></button></TableCell>
-            <TableCell className='tableCell btn'><button onClick={handleShow1} data-toggle="modal1">{row.cell}<BiAddToQueue className='tablei'/></button></TableCell>
-            <TableCell className='tableCell btn'><a  href="">{row.cell}<TbReport className='tablei'/></a></TableCell>
+            <TableCell className='tableCell btn' align='center'><button onClick={handleShow2} data-toggle="modal2">{row.cell}<BiAddToQueue className='tablei'/></button></TableCell>
+            <TableCell className='tableCell btn' align='center'><button onClick={handleShow3} data-toggle="modal3">{row.cell}<BiAddToQueue className='tablei'/></button></TableCell>
+            <TableCell className='tableCell btn' align='center'><button onClick={handleShow4} data-toggle="modal4">{row.cell}<BiAddToQueue className='tablei'/></button></TableCell>
+            <TableCell className='tableCell btn' align='center'><button onClick={handleShow1} data-toggle="modal1">{row.cell}<BiAddToQueue className='tablei'/></button></TableCell>
+            <TableCell className='tableCell btn' align='center'><a  href="">{row.cell}<TbReport className='tablei'/></a></TableCell>
+           
           </TableRow>
         ))}
         <Modal show={show1} onHide={handleClose1}>
