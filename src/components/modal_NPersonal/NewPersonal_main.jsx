@@ -114,7 +114,7 @@ class NewPersonal_main extends Component {
       idtipodevia,
       nombredevia,
       idTipoDeLocalidad,
-      nombrelocalidad
+      nombrelocalidad,
     } = this.state;
     alert(`Your registration detail: \n 
           Nombre: ${nombre} \n 
@@ -158,7 +158,7 @@ class NewPersonal_main extends Component {
           nombreDeVia: nombredevia,
           idTipoDeLocalidad: idTipoDeLocalidad,
           nombreLocalidad: nombrelocalidad,
-        }
+        },
       });
       //console.log(registro);
       if (registro.id === null) {

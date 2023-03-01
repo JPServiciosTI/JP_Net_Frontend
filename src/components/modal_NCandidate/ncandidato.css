@@ -14,7 +14,7 @@
 }
 .personalC input[type="text"]{
     margin-left: 20px;
-    width: 220px;
+    width: 230px;
     border-color:#2F48A7;
     height: 35px;
     border-radius: 5px;
@@ -23,7 +23,7 @@
 }
 .personalC input[type="number"]{
     margin-left: 20px;
-    width: 220px;
+    width: 190px;
     border-color:#2F48A7;
     height: 35px;
     border-radius: 5px;

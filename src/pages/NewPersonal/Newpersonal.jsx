@@ -1,26 +1,40 @@
-import React from 'react'
-import { NewPersonal_main } from '../../components/modal_NPersonal/NewPersonal_main'
-import { Navbar } from '../../components/navbar/Navbar'
-import { Sidebar } from '../../components/Side/Sidebar'
-import './newpersonal.css'
+import { useContext, useEffect, useState } from "react";
+import { NewPersonal_main } from "../../components/modal_NPersonal/NewPersonal_main";
+import { Navbar } from "../../components/navbar/Navbar";
+import { Sidebar } from "../../components/Side/Sidebar";
+import { Modal, Button } from "react-bootstrap";
+import "./newpersonal.css";
 
 function Newpersonal() {
-  
+  const [show, setshow] = useState(true);
+  const handleShow = () => setshow(true);
+  const handleClose = () => setshow(false);
+
   return (
-   <div className="newPersonal">
-    <Navbar/>
-    <div className="newCont">
-        <Sidebar/>
+    <div className="newPersonal">
+      <Navbar />
+      <div className="newCont">
+        <Sidebar />
         <div className="personalContainer">
-        <div className='personal-title'>Ingrese los datos del nuevo trabajador</div>
-        <div className="newContainer">
-            <NewPersonal_main/>
+          <div className="personal-title">
+            Ingrese los datos del nuevo trabajador
+          </div>
+          <div className="newContainer">
+            <Modal size="xl" centered show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title className="modalTittle">
+                  Nuevo Candidato
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <NewPersonal_main />
+              </Modal.Body>
+            </Modal>
+          </div>
         </div>
-        </div>
-        
+      </div>
     </div>
-   </div>
-  )
+  );
 }
 
-export {Newpersonal}
+export { Newpersonal };

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiAnalyse, BiSearch } from "react-icons/bi";
@@ -20,8 +20,8 @@ import { ImExit } from "react-icons/im";
 import { MdOutlineSecurity } from "react-icons/md";
 import { useNavigate } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { SubMenu } from './SubMenu'
-import './Sidebar.css';
+import { SubMenu } from "./SubMenu";
+import "./Sidebar.css";
 const routes = [
   {
     path: "/home",
@@ -31,7 +31,7 @@ const routes = [
   {
     path: "",
     name: "Recursos Humanos",
-    icon: <AiOutlineTeam/>,
+    icon: <AiOutlineTeam />,
     subRoutes: [
       {
         path: "",
@@ -39,7 +39,7 @@ const routes = [
         icon: <AiOutlineTeam />,
       },
       {
-        path: "",
+        path: "/NewCandidate",
         name: "Nuevo Candidato",
         icon: <AiOutlineTeam />,
       },
@@ -152,11 +152,7 @@ const routes = [
   },
 ];
 
-
-
-
-
-const Sidebar=()=> {
+const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
   const inputAnimation = {
@@ -192,20 +188,20 @@ const Sidebar=()=> {
       },
     },
   };
-let navigate = useNavigate();
-const [cookies, setCookie, removeCookie] = useCookies([
-  "jp_net_time",
-  "jp_net_user",
-  "jp_net_email",
-]);
+  let navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "jp_net_time",
+    "jp_net_user",
+    "jp_net_email",
+  ]);
 
-const onClickExit = () =>{
-  removeCookie("jp_net_user");
-  removeCookie("jp_net_email");
-  alert("HOLAAAA");
-  navigate("/login");
-}
-    
+  const onClickExit = () => {
+    removeCookie("jp_net_user");
+    removeCookie("jp_net_email");
+    alert("HOLAAAA");
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="main-container">
@@ -230,7 +226,9 @@ const onClickExit = () =>{
                   animate="show"
                   exit="hidden"
                   className="logo"
-                > <span>JP</span>Ingeneria y Servicios
+                >
+                  {" "}
+                  <span>JP</span>Ingeneria y Servicios
                 </motion.h1>
               )}
             </AnimatePresence>
@@ -244,9 +242,7 @@ const onClickExit = () =>{
                     route={route}
                     showAnimation={showAnimation}
                     isOpen={isOpen}
-                    
                   />
-                  
                 );
               }
 
@@ -276,12 +272,14 @@ const onClickExit = () =>{
             })}
             <hr />
 
-            <button className='btnExit'><ImExit /> Salir</button>
+            <button className="btnExit">
+              <ImExit /> Salir
+            </button>
           </section>
         </motion.div>
       </div>
     </>
   );
-}
+};
 
 export { Sidebar };

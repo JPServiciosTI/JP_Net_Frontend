@@ -2,12 +2,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import {Routes } from "react-router";
 import './css/App.css'
 import {PageLogin}  from './pages/login'
-import Layout from './pages/layout';
 import {Home} from './pages/Home/Home'
 import { ListP } from './pages/list_personal/List_personal';
 import { Newpersonal } from './pages/NewPersonal/Newpersonal';
 import NewCandidate from './pages/NewCandidate/NewCandidate';
 import {ListTareo} from './pages/list_tareo/ListTareo';
+import {Calendario} from './components/Modals/modal_Calendario/Calendario';
+import Planilla from './components/Planilla/Planilla';
 
 
 function App() {
@@ -32,8 +33,17 @@ function App() {
     <Routes>
         <Route path='/newcandidate' element={ <NewCandidate/>} exact />
     </Routes>
+     <Routes>
+        <Route path='/ListTareo' element={ <ListTareo/>} exact />
+    </Routes>
     <Routes>
         <Route path='/verTareoHistorico/:idEmpleado' element={ <ListTareo/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/Calendario' element={ <Calendario/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/Planilla' element={ <Planilla/>} exact />
     </Routes>
     </BrowserRouter>
 

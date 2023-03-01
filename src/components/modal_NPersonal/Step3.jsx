@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FormGroup, Label, Input, Button } from "reactstrap";
 import { get } from "../../services/api/api.service";
-import Select from 'react-select';
+import Select from "react-select";
 const Step3 = (props) => {
   const [DatosCargos, setDatosCargos] = useState([]);
 
@@ -19,24 +19,19 @@ const Step3 = (props) => {
     }
   };
 
-  let cargado = false
+  let cargado = false;
   useEffect(() => {
-    if(!cargado){
+    if (!cargado) {
       cargado = true;
       getCargos();
-      
     }
-    
-  },[]);
+  }, []);
 
-
-  const handleSelectChange =(event)=>{
+  const handleSelectChange = (event) => {
     props.idcargo = event.values;
 
-      console.log(event);
-  }
-
-
+    console.log(event);
+  };
 
   if (props.currentStep !== 3) {
     return null;
@@ -68,6 +63,9 @@ const Step3 = (props) => {
             value={props.campodeestudio}
             onChange={props.handleChange}
           >
+            <option value="" disabled selected hidden>
+              Seleccionar
+            </option>
             <option value={props.optioncampo} onChange={props.handleChange}>
               CIENCIAS DE LA SALUD
             </option>
@@ -89,14 +87,14 @@ const Step3 = (props) => {
           <Label for="cargo" className="personalC">
             Cargo: <span>*</span>
           </Label>
-            <Select 
+          <Select
             defaultValue={DatosCargos[0].idCargo}
-            options = {DatosCargos.map(elem => ({
+            options={DatosCargos.map((elem) => ({
               label: elem.NombreCargo,
-              values: elem.idCargo
+              values: elem.idCargo,
             }))}
             onChange={handleSelectChange}
-            />
+          />
         </div>
         <div className="personalC">
           <Label for="aniosexperiencia">
