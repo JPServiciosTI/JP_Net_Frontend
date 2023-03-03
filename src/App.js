@@ -2,13 +2,12 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import {Routes } from "react-router";
 import './css/App.css'
 import {PageLogin}  from './pages/login'
-import Layout from './pages/layout';
 import {Home} from './pages/Home/Home'
-import { ListP } from './pages/list_personal/List_personal';
-import { Newpersonal } from './pages/NewPersonal/Newpersonal';
-import NewCandidate from './pages/NewCandidate/NewCandidate';
+import { ListPersonalMain } from './pages/list_personal/List_personal';
 import {ListTareo} from './pages/list_tareo/ListTareo';
-
+import Tareo_List from './components/table_tareo/Tareo_List';
+import { ListCandidatosMain } from './pages/list_candidatos/list_candidatos';
+import "./css/App.css"
 
 function App() {
   return (
@@ -24,23 +23,23 @@ function App() {
         <Route path='/home' element={ <Home/>} exact />
     </Routes>
     <Routes>
-        <Route path='/listpersonal' element={ <ListP/>} exact />
+        <Route path='/listpersonal' element={ <ListPersonalMain/>} exact />
     </Routes>
     <Routes>
-        <Route path='/newpersonal' element={ <Newpersonal/>} exact />
+        <Route path='/listatareo' element={ <ListTareo/>} exact />
     </Routes>
     <Routes>
-        <Route path='/newcandidate' element={ <NewCandidate/>} exact />
+        <Route path='/listacandidatos' element={ <ListCandidatosMain/>} exact />
     </Routes>
     <Routes>
-<<<<<<< HEAD
-        <Route path='/newtareo' element={ <Tareo/>} exact />
+        <Route path='/newpersonal' element={ <ListCandidatosMain/>} exact />
     </Routes>
     <Routes>
-        <Route path='/newextratime' element={ <ExtraTime/>} exact />
+        <Route path='/newcandidate' element={ <ListCandidatosMain/>} exact />
     </Routes>
+
     <Routes>
-        <Route path='/verTareoHistorico/:idEmpleado' element={ <ListTareo/>} exact />
+        <Route path='/verTareoHistorico/:idEmpleado' element={ <Tareo_List/>} exact />
     </Routes>
     </BrowserRouter>
 

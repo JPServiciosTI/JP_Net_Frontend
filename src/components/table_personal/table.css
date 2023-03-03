@@ -1,8 +1,10 @@
+@import './../../css/paletadecolores.css';
+
 .table span{
     font-weight: bolder;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 15px;
-    color: #2F48A7;
+    color: var(--principal-color);
     font-size: 15px;
 }
 .table .cellWrapper{
@@ -22,8 +24,8 @@
     padding: 10px;
 }
 .tableCell p:hover{
-    background-color: #2F48A7;
-    color: #fff;
+    background-color: var(--principal-color);
+    color: var(--);
     font-weight: 500;
 }
 
@@ -36,7 +38,7 @@
     border-radius: 15%;
 }
 .tableCell button:hover{
-    background-color: #2F48A7;
-    color: #fff;
+    background-color: var(--principal-color);
+    color: var(--tipografia-de-contraste-principal-color);
     font-weight: 500;
 }

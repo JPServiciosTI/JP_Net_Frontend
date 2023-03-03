@@ -9,10 +9,12 @@ import Paper from "@mui/material/Paper";
 import { Modal, Button } from "react-bootstrap";
 import { BiAddToQueue } from "react-icons/bi";
 import { TbReport } from "react-icons/tb";
-import { NewExtraTime } from "../Modals/modal_Nhoraextra/NewExtraTime";
-import { NewTareo } from "../Modals/modal_Ntareo/NewTareo";
-import { LicenciaCon } from "../Modals/modal_LicenciaCon/LicenciaCon";
+import { NewExtraTime } from "../components/Modals/modal_Nhoraextra/NewExtraTime";
+import { NewTareo } from "../components/Modals/modal_Ntareo/NewTareo";
+import { LicenciaCon } from "../components/Modals/modal_LicenciaCon/LicenciaCon";
+import {get} from "../../../services/api/api.service"
 import "./table_tareo.css";
+import { useCookies } from "react-cookie";
 
 const hoy = new Date();
 let day = hoy.getDate();
@@ -23,24 +25,71 @@ month = ("0" + month).slice(-2);
 let date = day + "/" + month + "/" + year;
 
 function Table_Tareo() {
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "jp_net_idEmpleado",
+  ]);
+
+
+
   const [show1, setshow1] = useState(false);
   const handleShow1 = () => setshow1(true);
   const handleClose1 = () => setshow1(false);
 
   const [show2, setshow2] = useState(false);
-  const handleShow2 = () => setshow2(true);
-  const handleClose2 = () => setshow2(false);
+  const handleShow2 = (e) =>{
+    e.preventDefault();
+    setshow2(true);
+    console.log("Valores del Console", e);
+    setCookie("jp_net_dni_candidato", e.target.value, { path: "/" });
+  }
+  const handleClose2 = () => {
+    setshow2(false);
+    removeCookie("jp_net_idEmpleado");
+  }
 
   const [show3, setshow3] = useState(false);
-  const handleShow3 = () => setshow3(true);
-  const handleClose3 = () => setshow3(false);
-
+  const handleShow3 = (e) =>{
+    setshow3(true);
+    setCookie("jp_net_idEmpleado",e.target.value);
+  }
+  const handleClose3 = () => {
+    setshow3(false);
+    removeCookie("jp_net_idEmpleado");
+  }
   const [show4, setshow4] = useState(false);
   const handleShow4 = () => setshow4(true);
   const handleClose4 = () => setshow4(false);
 
   const [datosCandidatos, setDatosCandidatos] = useState([]);
   const [idCandidato,setIdCandidatos] = useState();
+  
+  const getDataDeEmpleadoss = async () => {
+    try {
+      const data = await get({
+        url: "/empleado/getForLimit",
+        data: {
+          idmin: 0,
+          cantidad: 10,
+        },
+      });
+
+      setDatosCandidatos(data["id"][0]);
+      console.log('Aqui; ',datosCandidatos);
+      return;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  let cargado = false;
+  useEffect(() => {
+    if (!cargado) {
+      cargado = true;
+      getDataDeEmpleadoss();
+    }
+  }, []);
+
+  
 
 
   const rows = [
@@ -68,10 +117,7 @@ function Table_Tareo() {
         <TableHead>
           <TableRow>
             <TableCell className="tableCell">
-              <span>Nombres</span>
-            </TableCell>
-            <TableCell className="tableCell">
-              <span>Apellidos</span>
+              <span>Nombres Completo</span>
             </TableCell>
             <TableCell className="tableCell">
               <span>DNI</span>
@@ -94,42 +140,31 @@ function Table_Tareo() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.nombres}>
+          {datosCandidatos.map((row) => (
+            <TableRow key={row.idEmpleado}>
               <TableCell className="tableCell">
                 <div className="cellWrapper">
                   <img src={"https://picsum.photos/300"} alt="" className="image" />
-                  <a href="">{row.nombres}</a>
+                  <a href="">{row.Nombres} {row.ApellidoPaterno} {row.ApellidoMaterno}</a>
                 </div>
               </TableCell>
               <TableCell className="tableCell">
-                <a href="">{row.apellidos}</a>
-              </TableCell>
-              <TableCell className="tableCell">
-                <a href="">{row.cargo}</a>
+                <a href="">{row.DNI}</a>
               </TableCell>
               <TableCell className="tableCell btn">
-                <button onClick={handleShow2} data-toggle="modal2">
-                  {row.cell}
-                  <BiAddToQueue className="tablei" />
+                <button value={row.idEmpleado} onClick={handleShow2} data-toggle="modal2">
                 </button>
               </TableCell>
               <TableCell className="tableCell btn">
-                <button onClick={handleShow3} data-toggle="modal3">
-                  {row.cell}
-                  <BiAddToQueue className="tablei" />
+                <button onClick={handleShow3} value={row.idEmpleado} data-toggle="modal3">
                 </button>
               </TableCell>
               <TableCell className="tableCell btn">
-                <button onClick={handleShow4} data-toggle="modal4">
-                  {row.cell}
-                  <BiAddToQueue className="tablei" />
+                <button onClick={handleShow4} data-toggle="modal4" value={row.idEmpleado}>
                 </button>
               </TableCell>
               <TableCell className="tableCell btn">
-                <button onClick={handleShow1} data-toggle="modal1">
-                  {row.cell}
-                  <BiAddToQueue className="tablei" />
+                <button onClick={handleShow1} data-toggle="modal1" value={row.idEmpleado}>
                 </button>
               </TableCell>
               <TableCell className="tableCell btn">

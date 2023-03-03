@@ -2,3 +2,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body::-webkit-scrollbar{
+  width: 7px !important; 
+}
+
+body::-webkit-scrollbar-thumb{
+  background: #cacaca !important;
+  border-radius: 10px;
+  border-right: 2px solid #fff ;
+}
+

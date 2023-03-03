@@ -9,11 +9,11 @@ section {
   margin-left: 10px;
   padding:10px;
   width: 250px;
-  border: #2F48A7 solid 2px;
+  border: var(--principal-color) solid 2px;
   border-radius: 5px;
 }
 .signup-classic h3{
-  color: #2F48A7;
+  color: var(--principal-color);
   font-weight: bolder;
   margin: auto;
   right: 50%;
@@ -31,12 +31,12 @@ Buttons
 --------------------*/
 .btn-l {
   display: block;
-  background: #2F48A7;
-  color: #fff;
+  background: var(--principal-color);
+  color: var(--tipografia-de-contraste-principal-color);
   text-decoration: none;
   width: 100px;
   margin: 20px 0;
-  border: #2F48A7;
+  border: var(--principal-color);
   padding: 15px 15px;
   border-radius: 5px;
   margin: auto;
@@ -55,7 +55,7 @@ Signup
   transform: translate(-50%, -50%);
   z-index: 1;
   width: 800px;
-  background: #fff;
+  background: var(--tipografia-de-contraste-principal-color);
   border-radius: 5px;
   box-shadow: #323852;
   display: flex;
@@ -68,7 +68,7 @@ Signup
 }
 
 .signup-connect {
-  background: #2F48A7;
+  background: var(--principal-color);
 
 }
 

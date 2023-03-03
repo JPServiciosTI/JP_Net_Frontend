@@ -43,7 +43,7 @@ const menuItemAnimation = {
   }),
 };
 
-const SubMenu=({route, showAnimation, isOpen,setIsOpen})=> {
+const SubMenuEspecial=({route, showAnimation, isOpen,setIsOpen})=> {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -99,19 +99,21 @@ const SubMenu=({route, showAnimation, isOpen,setIsOpen})=> {
             className="menu_container"
           >
             {route.subRoutes.map((subRoute, i) => (
+                
               <motion.div variants={menuItemAnimation} key={i} custom={i}>
                 <NavLink to={subRoute.path} className="link">
                   <div className="icon">{subRoute.icon}</div>
                   <motion.div className="link_text">{subRoute.name}</motion.div>
                 </NavLink>
               </motion.div>
-            ))}
+            ))
+            }
+            {console.log(route.subRoutes)}
           </motion.div>
         )}{" "}
-        {console.log("Rutas: ", route.subRoutes)}
       </AnimatePresence>
     </>
   );
 };
 
-export  {SubMenu};
+export  {SubMenuEspecial};
