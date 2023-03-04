@@ -2,7 +2,7 @@
 /*css para Login*/
 
 section {
-  background-color: #DDDDDD;
+  background-color: #ff0a0a;
 }
 .username{
   margin-top: 15px;
@@ -44,7 +44,9 @@ Buttons
 
 }
 
-
+body{
+  background-color: #ddd I !important;
+}
 /*--------------------
 Signup
 --------------------*/

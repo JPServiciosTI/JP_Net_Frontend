@@ -273,7 +273,6 @@ const Sidebar = () => {
   const onClickExit = () => {
     removeCookie("jp_net_user");
     removeCookie("jp_net_email");
-    alert("HOLAAAA");
     navigate("/login");
   };
 
@@ -348,7 +347,7 @@ const Sidebar = () => {
             })}
             <hr />
 
-            <button className="btnExit">
+            <button className="btnExit" onClick={onClickExit}>
               <ImExit /> Salir
             </button>
           </section>
