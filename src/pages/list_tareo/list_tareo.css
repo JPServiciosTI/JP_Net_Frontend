@@ -1,13 +1,10 @@
 .listT{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
     display: flex;
     width: 100%;
 }
 .lgeneral{
-    flex: 6;
-    width: 100%;
-    padding: 0;
-    box-sizing: border-box;
+     position: relative;
+      left: 240px;
+    width: calc(100% - 240px);
 }

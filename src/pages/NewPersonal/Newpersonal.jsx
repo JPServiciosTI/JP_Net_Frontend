@@ -12,9 +12,9 @@ function Newpersonal() {
 
   return (
     <div className="newPersonal">
-      <Navbar />
+      <Sidebar />
       <div className="newCont">
-        <Sidebar />
+        <Navbar />
         <div className="personalContainer">
           <div className="personal-title">
             Ingrese los datos del nuevo trabajador

@@ -1,23 +1,17 @@
-.list{
+.mainPlanilla{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
     width: 100%;
 }
- .general{
-    position: relative;
+.generalPlanilla{
+  position: relative;
       left: 240px;
     width: calc(100% - 240px);
 }
-.listContainer {
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
-    box-shadow: 2px 4px 15px 1px #2F48A7;
-    padding: 20px;
-    margin: 20px;
-}
-.listTitle {
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
+.listPlanilla{  
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
     box-shadow: 2px 4px 15px 1px #2F48A7;
     padding: 12px;
     margin: 20px;
