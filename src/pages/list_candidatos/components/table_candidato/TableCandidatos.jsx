@@ -7,12 +7,15 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Modal, Button } from "react-bootstrap";
-import { BiBriefcaseAlt2, BiErrorAlt } from "react-icons/bi";
+import { BiBriefcaseAlt2, BiErrorAlt , BiAddToQueue} from "react-icons/bi";
 
 import "./table_tareo.css";
 import { get } from "../../../../services/api/api.service";
 import { ActualizarEstadoDeProcesoDeCandidato } from "./modal_ActualizarEstadoDeProcesoDeCandidato/components/ActualizarEstadoDeProcesoDeCandidato";
 import { useCookies } from "react-cookie";
+import { BottomNavigation } from "@mui/material";
+import Candidato_modal from "./modal_NuevoCandidato";
+import { NewPersonal_main } from "./modal_NPersonal/NewPersonal_main";
 
 
 const hoy = new Date();
@@ -74,6 +77,25 @@ function TableCandidatos() {
     "jp_net_dni_candidato",
   ]);
 
+
+  const [show6, setshow6] = useState(false);
+  const handleShow6 = (e) => {
+    e.preventDefault();
+    setshow6(true);
+   };
+  const handleClose6 = () => {
+    setshow6(false);
+  };
+
+  const [show, setshow] = useState(false);
+  const handleShow = (e) => {
+    e.preventDefault();
+    setshow(true);
+   };
+  const handleClose = () => {
+    setshow(false);
+  };
+
   const rows = [
     {
       img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
@@ -92,8 +114,6 @@ function TableCandidatos() {
       cell: () => <button>Registrar</button>,
     },
   ];
-
-
 
 
   const handleContratoAEmpleado = async ()=>{
@@ -116,13 +136,16 @@ function TableCandidatos() {
 
   return (
     <TableContainer component={Paper} className="table">
+      <button onClick={handleShow6} data-toggle="modal2" className="botondeanadir" >
+        <BiAddToQueue className="tablei" />
+      </button>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
           <TableCell className="tableCell">
               <span></span>
             </TableCell>
-            <TableCell className="tableCell btn"  >
+            <TableCell className="tableCell btn">
               <span>Nombre Completo</span>
             </TableCell>
             <TableCell className="tableCell">
@@ -140,6 +163,7 @@ function TableCandidatos() {
           </TableRow>
         </TableHead>
         <TableBody>
+          
           {datosCandidatos.map((row) => (
             <TableRow key={row.idCandidato}>
               <TableCell>
@@ -183,7 +207,7 @@ function TableCandidatos() {
           <Modal show={show2} onHide={handleShow2}>
             <Modal.Header>
               <Modal.Title className="modalTittle">
-                Registrar Hora Extra
+                Actualizar Proceso de Candidato
               </Modal.Title>
               <div className="time">
                 <label htmlFor="">{date}</label>
@@ -192,12 +216,41 @@ function TableCandidatos() {
             <Modal.Body>
               <ActualizarEstadoDeProcesoDeCandidato />
             </Modal.Body>
+            
             <Modal.Footer>
               <Button variant="danger" onClick={handleClose2}>
                 Cerrar
               </Button>
             </Modal.Footer>
           </Modal>
+          <Modal show={show6} onHide={handleShow6}>
+            <Modal.Header>
+              <Modal.Title className="modalTittle">
+                Nuevo Candidato
+              </Modal.Title>
+              <div className="time">
+                <label htmlFor="">{date}</label>
+              </div>
+            </Modal.Header>
+            <Modal.Body>
+              <Candidato_modal />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="danger" onClick={handleClose6}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          <Modal size="xl" centered show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title className="modalTittle">
+                  Nuevo Empleado
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <NewPersonal_main />
+              </Modal.Body>
+            </Modal>
         </TableBody>
       </Table>
     </TableContainer>
@@ -264,7 +317,7 @@ function TableCandidatos() {
 
   function EtapasCompletas(props) {
     return (
-      <button onClick={handleShow2} data-toggle="modal2" className="botondecontrato" >
+      <button onClick={handleShow} data-toggle="modal2" className="botondecontrato" >
         <BiBriefcaseAlt2 className="tablei" />
 
       </button>

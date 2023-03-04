@@ -15,6 +15,8 @@ import { LicenciaCon } from "../components/Modals/modal_LicenciaCon/LicenciaCon"
 import {get} from "../../../services/api/api.service"
 import "./table_tareo.css";
 import { useCookies } from "react-cookie";
+import { Calendario } from "./Modals/modal_Calendario/Calendario";
+
 
 const hoy = new Date();
 let day = hoy.getDate();
@@ -59,6 +61,10 @@ function Table_Tareo() {
   const [show4, setshow4] = useState(false);
   const handleShow4 = () => setshow4(true);
   const handleClose4 = () => setshow4(false);
+
+  const [show5, setshow5] = useState(false);
+  const handleShow5 = () => setshow5(true);
+  const handleClose5 = () => setshow5(false);
 
   const [datosCandidatos, setDatosCandidatos] = useState([]);
   const [idCandidato,setIdCandidatos] = useState();
@@ -164,14 +170,13 @@ function Table_Tareo() {
                 </button>
               </TableCell>
               <TableCell className="tableCell btn">
-                <button onClick={handleShow1} data-toggle="modal1" value={row.idEmpleado}>
+                <button onClick={handleShow4} data-toggle="modal1" value={row.idEmpleado}>
                 </button>
               </TableCell>
               <TableCell className="tableCell btn">
-                <a href="">
-                  {row.cell}
-                  <TbReport className="tablei" />
-                </a>
+              <button onClick={handleShow5} data-toggle="modal1" value={row.idEmpleado}>
+              <TbReport className="tablei" />
+                </button>
               </TableCell>
             </TableRow>
           ))}
@@ -246,6 +251,21 @@ function Table_Tareo() {
                 Cerrar
               </Button>
             </Modal.Footer>
+          </Modal>
+          <Modal show={show5} onHide={handleClose5}>
+            <Modal.Header>
+              <Modal.Title className="modalTittle">Tareo Histórico</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Calendario />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="danger" onClick={handleClose5}>
+                {" "}
+                Cerrar
+              </Button>
+            </Modal.Footer>
+            <div id="date-popup" />
           </Modal>
         </TableBody>
       </Table>
