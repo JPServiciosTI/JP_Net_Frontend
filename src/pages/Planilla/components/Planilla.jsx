@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -14,6 +14,7 @@ import { Calendario } from "../components/components/modal_Calendario/Calendario
 import Bonos from "../components/components/modal_Bonos/Bonos";
 import TotalDescuento from "../components/components/modal_TotalDescuento/TotalDescuento";
 import FondoPension from "../components/components/modal_FondoPension/FondoPension";
+import { get } from "../../../services/api/api.service";
 
 const rows = [
   {
@@ -95,6 +96,31 @@ function PlanillaTable() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  const [DatosPlanilla, setDatosPlanilla] = useState([]);
+
+  const getDatos = async () => {
+    try {
+      const datos = await get({
+        url: "/planilla/personas",
+        data: {
+          FechaInicio: "2023-01-16",
+          FechaFin: "2023-02-15",
+        },
+      });
+      setDatosPlanilla(datos["id"][0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  let cargado = false;
+  useEffect(() => {
+    if (!cargado) {
+      cargado = true;
+      getDatos();
+    }
+  }, []);
   /* FIN PAGINACIÓN DE TABLAS */
 
   /*BUSQUEDA PERSONA*/
@@ -108,10 +134,7 @@ function PlanillaTable() {
           <TableHead>
             <TableRow>
               <TableCell className="tableCell">
-                <span>Nombres</span>
-              </TableCell>
-              <TableCell className="tableCell">
-                <span>Apellidos</span>
+                <span>Nombres Apellidos</span>
               </TableCell>
               <TableCell className="tableCell">
                 <span>Sueldo Bruto</span>
@@ -137,16 +160,13 @@ function PlanillaTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.nombres}>
+            {DatosPlanilla.map((row) => (
+              <TableRow key={row.idContrato}>
                 <TableCell className="tableCell">
                   <div className="cellWrapper">
-                    <img src={row.img} alt="" className="image" />
-                    <a href="">{row.nombres}</a>
+                    <img src={"https://picsum.photos/300"} alt="" className="image" />
+                    <a href="">{row.Nombres} {row.ApellidoPaterno} {row.ApellidoMaterno}</a>
                   </div>
-                </TableCell>
-                <TableCell align="center" className="tableCell">
-                  <a href="">{row.apellidos}</a>
                 </TableCell>
                 <TableCell align="center" className="tableCell" width={"150px"}>
                   <a href="">{row.sueldobruto}</a>

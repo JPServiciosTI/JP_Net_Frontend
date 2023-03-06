@@ -318,7 +318,7 @@ function TableCandidatos() {
   function EtapasCompletas(props) {
     return (
       <button onClick={handleShow} data-toggle="modal2" className="botondecontrato" >
-        <BiBriefcaseAlt2 className="tablei" />
+        CONTRATAR
 
       </button>
     );

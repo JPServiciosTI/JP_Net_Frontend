@@ -13,7 +13,8 @@ const Step3 = (props) => {
       });
       //console.log(datos['id'][0]);
 
-      setDatosCargos(datos["id"][0]);
+      setDatosCargos(datos["id"]);
+      console.log("ss",DatosCargos)
     } catch (error) {
       console.log(error);
     }
@@ -28,9 +29,10 @@ const Step3 = (props) => {
   }, []);
 
   const handleSelectChange = (event) => {
-    props.idcargo = event.values;
+    let ss = event.target.value;
+    props.idcargo =ss;
 
-    console.log(event);
+    console.log("Dentro",event.target.value);
   };
 
   if (props.currentStep !== 3) {
@@ -66,19 +68,19 @@ const Step3 = (props) => {
             <option value="" disabled selected hidden>
               Seleccionar
             </option>
-            <option value={props.optioncampo} onChange={props.handleChange}>
+            <option value={1} onChange={props.handleChange}>
               CIENCIAS DE LA SALUD
             </option>
-            <option value={props.optioncampo} onChange={props.handleChange}>
+            <option value={2} onChange={props.handleChange}>
               CIENCIAS SOCIALES
             </option>
-            <option value={props.optioncampo} onChange={props.handleChange}>
+            <option value={3} onChange={props.handleChange}>
               CIENCIAS FORMALES
             </option>
-            <option value={props.optioncampo} onChange={props.handleChange}>
+            <option value={4} onChange={props.handleChange}>
               INGENIERIA
             </option>
-            <option value={props.optioncampo} onChange={props.handleChange}>
+            <option value={5} onChange={props.handleChange}>
               TECNOLOGIA
             </option>
           </select>
@@ -87,14 +89,13 @@ const Step3 = (props) => {
           <Label for="cargo" className="personalC">
             Cargo: <span>*</span>
           </Label>
-          <Select
-            defaultValue={DatosCargos[0].idCargo}
-            options={DatosCargos.map((elem) => ({
-              label: elem.NombreCargo,
-              values: elem.idCargo,
-            }))}
-            onChange={handleSelectChange}
-          />
+          <select onChange={props.handleChange} id="idcargo">
+            {DatosCargos[0].map((option) => (
+          <option key={option.idCargo} value={option.idCargo}>
+            {option.NombreCargo}
+          </option>
+        ))}
+      </select>
         </div>
         <div className="personalC">
           <Label for="aniosexperiencia">

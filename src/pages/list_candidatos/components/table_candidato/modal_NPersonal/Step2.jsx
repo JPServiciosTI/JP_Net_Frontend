@@ -22,67 +22,67 @@ const Step2 = (props) => {
             <option value="" disabled selected hidden>
               Seleccionar
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={1} onChange={props.handleChange}>
               JR
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={2} onChange={props.handleChange}>
               CL
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={3} onChange={props.handleChange}>
               AV
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={4} onChange={props.handleChange}>
               PSJE
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={5} onChange={props.handleChange}>
               MZ
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={6} onChange={props.handleChange}>
               PROLONG
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={7} onChange={props.handleChange}>
               BLOCK
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={8} onChange={props.handleChange}>
               CONDOMINIO
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={9} onChange={props.handleChange}>
               PARQUE
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={10} onChange={props.handleChange}>
               MALECON
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={11} onChange={props.handleChange}>
               ALAMEDA
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={12} onChange={props.handleChange}>
               CARRETERA
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={13} onChange={props.handleChange}>
               AUTOPISTA
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={14} onChange={props.handleChange}>
               C.P.
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={15} onChange={props.handleChange}>
               CASERIO
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={16} onChange={props.handleChange}>
               PLAZA
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={17} onChange={props.handleChange}>
               OVALO
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={18} onChange={props.handleChange}>
               BOULEVARD
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={19} onChange={props.handleChange}>
               PASEO
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={20} onChange={props.handleChange}>
               EDIFICIO
             </option>
-            <option value={props.optiontipovia} onChange={props.handleChange}>
+            <option value={21} onChange={props.handleChange}>
               SUPERMZ
             </option>
           </select>
@@ -114,49 +114,49 @@ const Step2 = (props) => {
             <option value="" disabled selected hidden>
               Seleccionar
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={1} onChange={props.handleChange}>
               URB
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={2} onChange={props.handleChange}>
               AAHH
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={3} onChange={props.handleChange}>
               PPJJ
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={4} onChange={props.handleChange}>
               ASOC
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={5} onChange={props.handleChange}>
               ZONA
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={6} onChange={props.handleChange}>
               GRUPO
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={7} onChange={props.handleChange}>
               SECTOR
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={8} onChange={props.handleChange}>
               CONJ. HAB
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={9} onChange={props.handleChange}>
               RESIDENNC.
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={10} onChange={props.handleChange}>
               COOP.
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={11} onChange={props.handleChange}>
               UNID. VEC
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={12} onChange={props.handleChange}>
               CASERIO
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={13} onChange={props.handleChange}>
               CAMPAMENTO
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={14} onChange={props.handleChange}>
               FUNDO
             </option>
-            <option value={props.optionlocalidad} onChange={props.handleChange}>
+            <option value={15} onChange={props.handleChange}>
               COMUNIDAD
             </option>
           </select>
@@ -214,34 +214,34 @@ const Step2 = (props) => {
             <option value="" disabled selected hidden>
               Seleccionar
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={1} onChange={props.handleChange}>
               A-1
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={2} onChange={props.handleChange}>
               A-2A
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={3} onChange={props.handleChange}>
               A-2B
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={4} onChange={props.handleChange}>
               A-3A
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={5} onChange={props.handleChange}>
               A-3B
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={6} onChange={props.handleChange}>
               A-3C
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={7} onChange={props.handleChange}>
               B-1
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={8} onChange={props.handleChange}>
               B-2A
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={9} onChange={props.handleChange}>
               B-2B
             </option>
-            <option value={props.optionbrevete} onChange={props.handleChange}>
+            <option value={10} onChange={props.handleChange}>
               B-2C
             </option>
           </select>
@@ -260,49 +260,49 @@ const Step2 = (props) => {
               Seleccionar
             </option>
             <option
-              value={props.optionTipodeSangre}
+              value={1}
               onChange={props.handleChange}
             >
               O+
             </option>
             <option
-              value={props.optionTipodeSangre}
+              value={2}
               onChange={props.handleChange}
             >
               O-
             </option>
             <option
-              value={props.optionTipodeSangre}
+              value={3}
               onChange={props.handleChange}
             >
               A+
             </option>
             <option
-              value={props.optionTipodeSangre}
+              value={4}
               onChange={props.handleChange}
             >
               A-
             </option>
             <option
-              value={props.optionTipodeSangre}
+              value={5}
               onChange={props.handleChange}
             >
               B+
             </option>
             <option
-              value={props.optionTipodeSangre}
+              value={6}
               onChange={props.handleChange}
             >
               B-
             </option>
             <option
-              value={props.optionTipodeSangre}
+              value={7}
               onChange={props.handleChange}
             >
               AB+
             </option>
             <option
-              value={props.optionTipodeSangre}
+              value={8}
               onChange={props.handleChange}
             >
               AB-
@@ -333,19 +333,19 @@ const Step2 = (props) => {
             <option value="" disabled selected hidden>
               Seleccionar
             </option>
-            <option value={props.optionfondo} onChange={props.handleChange}>
+            <option value={1} onChange={props.handleChange}>
               ONP
             </option>
-            <option value={props.optionfondo} onChange={props.handleChange}>
+            <option value={2} onChange={props.handleChange}>
               AFP INTEGRA
             </option>
-            <option value={props.optionfondo} onChange={props.handleChange}>
+            <option value={3} onChange={props.handleChange}>
               AFP HABITAD
             </option>
-            <option value={props.optionfondo} onChange={props.handleChange}>
+            <option value={4} onChange={props.handleChange}>
               AFP PRIMA
             </option>
-            <option value={props.optionfondo} onChange={props.handleChange}>
+            <option value={5} onChange={props.handleChange}>
               AFP PROFUTURO
             </option>
           </select>

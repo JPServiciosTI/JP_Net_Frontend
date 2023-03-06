@@ -11,7 +11,7 @@
     width: calc(100% - 240px);
 }
 .listPlanilla{  
-      -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
     box-shadow: 2px 4px 15px 1px #2F48A7;
     padding: 12px;
     margin: 20px;

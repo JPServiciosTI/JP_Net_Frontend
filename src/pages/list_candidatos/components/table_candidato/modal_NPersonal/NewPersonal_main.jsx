@@ -71,6 +71,7 @@ class NewPersonal_main extends Component {
   // Utilizando los datos enviados para establecer estado
   handleChange(event) {
     const { id, value } = event.target;
+    console.log("Es: ",id,value)
     this.setState({
       [id]: value,
     });
@@ -160,9 +161,10 @@ class NewPersonal_main extends Component {
           nombreLocalidad: nombrelocalidad.toUpperCase(),
         },
       });
+      alert("Registrado con Exito");
       //console.log(registro);
       if (registro.id === null) {
-        alert("No es Usuario o Password Correcta");
+        alert("Error");
         return null;
       } else {
       }
