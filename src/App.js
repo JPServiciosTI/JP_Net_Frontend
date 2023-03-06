@@ -8,6 +8,8 @@ import {ListTareo} from './pages/list_tareo/ListTareo';
 import Tareo_List from './components/table_tareo/Tareo_List';
 import { ListCandidatosMain } from './pages/list_candidatos/list_candidatos';
 import "./css/App.css"
+import { MainPlanilla } from './pages/Planilla/MainPlanilla';
+
 
 function App() {
   return (
@@ -40,6 +42,10 @@ function App() {
 
     <Routes>
         <Route path='/verTareoHistorico/:idEmpleado' element={ <Tareo_List/>} exact />
+    </Routes>
+
+    <Routes>
+        <Route path='/planilla' element={ <MainPlanilla/>} exact />
     </Routes>
     </BrowserRouter>
 
