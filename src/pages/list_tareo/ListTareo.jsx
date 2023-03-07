@@ -1,7 +1,7 @@
 import React from 'react'
 import { Sidebar } from '../../components/Side/Sidebar'
 import { Navbar } from '../../components/navbar/Navbar'
-import {Table_Tareo} from '../../components/table_tareo/Table_Tareo'
+import {Table_Tareo} from '../../pages/list_tareo/components/Table_Tareo'
 import './list_tareo.css'
 
 

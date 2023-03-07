@@ -1,0 +1,27 @@
+           <Input
+            disabled
+            type="text"
+            name="departamento"
+            id="departamento"
+            placeholder="Departamento"
+            value={props.departamento} // Prop: los datos de entrada de correo electrónico
+            onChange={props.handleChange} // Prop: Pone los datos en el estado
+          />
+           <Input
+            disabled
+            type="text"
+            name="provincia"
+            id="provincia"
+            placeholder="Provincia"
+            value={props.provincia} // Prop: los datos de entrada de correo electrónico
+            onChange={props.handleChange} // Prop: Pone los datos en el estado
+          />
+          <Input
+            disabled
+            type="text"
+            name="distrito"
+            id="distrito"
+            placeholder="Distrito"
+            value={props.distrito} // Prop: los datos de entrada de correo electrónico
+            onChange={props.handleChange} // Prop: Pone los datos en el estado
+          />

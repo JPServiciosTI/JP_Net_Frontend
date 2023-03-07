@@ -4,7 +4,7 @@ import Candidato_modal from '../../components/modal_NCandidate/Candidato_modal'
 import { Sidebar } from '../../components/Side/Sidebar'
 import './newcandidate.css'
 
-function  NewCandidate() {
+function NewCandidate() {
   return (
     <div className="newCandidate">
         <Sidebar/>

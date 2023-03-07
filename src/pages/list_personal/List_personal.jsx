@@ -1,10 +1,10 @@
 import React from 'react'
 import {Sidebar} from '../../components/Side/Sidebar'
 import { Navbar } from '../../components/navbar/Navbar'
-import {ListPP} from '../../components/table_personal/Table_Personal'
+import {ListPP} from './components/table_personal/Table_Personal'
 import './list.css'
 
-function ListP() {
+function ListPersonalMain() {
   return (
     <div className='list'>
         <Sidebar/>
@@ -21,4 +21,4 @@ function ListP() {
   )
 }
 
-export {ListP}
+export {ListPersonalMain}

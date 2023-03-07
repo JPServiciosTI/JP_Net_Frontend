@@ -7,10 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import './table.css'
-import { get } from '../../services/api/api.service';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router';
-
+import { get } from '../../../../services/api/api.service';
+import { BottomNavigation } from '@mui/material';
 
 
 
@@ -48,7 +48,7 @@ const ListPP=()=> {
 
 
   return (
-    <TableContainer component={Paper} className="table">
+    <TableContainer component={Paper} className="table">   
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
       <TableHead>
         <TableRow>

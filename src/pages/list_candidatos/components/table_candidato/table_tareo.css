@@ -1,0 +1,22 @@
+.tablei{
+    font-size: 25px;
+    
+}
+.btn{
+    justify-content: center;
+    align-items: center;
+
+}
+.tablei:hover{
+    
+}
+.botondecontrato{
+    background-color: green !important;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.botondecontrato {
+    background-color: #20c997 !important;
+}

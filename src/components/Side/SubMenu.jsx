@@ -108,6 +108,7 @@ const SubMenu=({route, showAnimation, isOpen,setIsOpen})=> {
             ))}
           </motion.div>
         )}{" "}
+        {console.log("Rutas: ", route.subRoutes)}
       </AnimatePresence>
     </>
   );

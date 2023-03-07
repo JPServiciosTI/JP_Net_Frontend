@@ -1,3 +1,4 @@
+@import './../../css/paletadecolores.css';
 .personalC{
     display: inline-flex;
     margin: 8px;
@@ -15,23 +16,23 @@
 .personalC input[type="text"]{
     margin-left: 20px;
     width: 220px;
-    border-color:#2F48A7;
+    border-color:var(--principal-color);
     
 }
 .personalC input[type="number"]{
     margin-left: 20px;
     width: 170px;
-    border-color:#2F48A7;
+    border-color: var(--principal-color)
 }
 .personalC input[type="date"]{
     margin-left: 20px;
     width: 200px;
-    border-color:#2F48A7;
+    border-color: var(--principal-color)
 }
 .personalC select{
     margin-left: 20px;
     width: 180px;
-    border-color:#2F48A7;
+    border-color: var(--principal-color)
 }
 .smallp select{
     width: 100px;

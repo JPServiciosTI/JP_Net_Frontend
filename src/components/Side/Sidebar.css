@@ -21,13 +21,13 @@
   place-items: center;
 }
 .sidebar {
+  flex: 1 ;
   width: 260px;
   background: #2F48A7;
   color: white;
   height: 100vh;
-  overflow-y: auto;
-  z-index: 100;
-transition: all 0.5s ease;
+  position: fixed;
+  transition: all 0.02s ease;
 }
 
 .top_section {
@@ -68,6 +68,7 @@ line-height: 50px;
   gap: 10px;
   padding: 10px 10px;
   transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  text-decoration: none;
 }
 .routes .link:hover {
   background: #576bbb;
@@ -112,5 +113,6 @@ line-height: 50px;
   padding: 5px;
 }
 .btnExit:hover{
+  
   background-color: #576bbb;;
 }

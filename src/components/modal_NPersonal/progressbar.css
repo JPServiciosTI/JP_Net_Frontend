@@ -1,5 +1,6 @@
+@import './../../css/paletadecolores.css';
 .indexedStep {
-    color: white;
+    color: var(--tipografia-de-contraste-principal-color);
     width: 20px;
     height: 20px;
     font-size: 12px;
@@ -11,6 +12,6 @@
   }
   
   .indexedStep.accomplished {
-    background-color: rgba(0, 116, 217, 1);
+    background-color: var(--animacion-color)
   }
   

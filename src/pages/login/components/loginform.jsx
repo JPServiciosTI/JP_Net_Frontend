@@ -44,8 +44,10 @@ function LoginForm() {
       } else {
         let id = registro.id;
         setPersonID(id);
-        setCookie("jp_net_user", id, { path: "/" });
-        setCookie("jp_net_email", email, { path: "/" });
+        let day = new Date();
+        day.setMinutes(day.getMinutes()+1)
+        setCookie("jp_net_user", id, { path: "/" , expires: day });
+        setCookie("jp_net_email", email, { path: "/", expires: day });
         navigate("/home");
         //alert(registro.id);
       }

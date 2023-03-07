@@ -13,10 +13,7 @@ function Navbar() {
 			
 
 		</div>
-		<div className="search">
-			<input type="text" placeholder="Buscar . . ."/>
-			<SearchOutlinedIcon/>
-		</div>
+
 		</div>
 		
 		<div className="items">

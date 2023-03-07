@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiAnalyse, BiSearch } from "react-icons/bi";
@@ -8,10 +8,8 @@ import {
   AiOutlineFundProjectionScreen,
   AiFillSetting,
 } from "react-icons/ai";
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
 import {
   BsFillGridFill,
-  BsFillArrowDownCircleFill,
   BsFillDiagram2Fill,
   BsWalletFill,
   BsFillFileEarmarkBarGraphFill,
@@ -20,8 +18,8 @@ import { ImExit } from "react-icons/im";
 import { MdOutlineSecurity } from "react-icons/md";
 import { useNavigate } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { SubMenu } from './SubMenu'
-import './Sidebar.css';
+import { SubMenu } from "./SubMenu";
+import "./Sidebar.css";
 const routes = [
   {
     path: "/home",
@@ -31,26 +29,50 @@ const routes = [
   {
     path: "",
     name: "Recursos Humanos",
-    icon: <AiOutlineTeam/>,
+    icon: <AiOutlineTeam />,
     subRoutes: [
       {
-        path: "/newpersonal",
-        name: "Nuevo Trabajador ",
+        path: "/listacandidatos",
+        name: "Reclutamiento",
         icon: <AiOutlineTeam />,
-      },
-      {
-        path: "/newcandidate",
-        name: "Nuevo Candidato",
-        icon: <AiOutlineTeam />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Nuevo Candidato",
+            icon: <AiOutlineTeam />,
+          },
+          {
+            path: "",
+            name: "Lista Candidato",
+            icon: <AiOutlineTeam />,
+          },
+        ],
       },
       {
         path: "/listpersonal",
-        name: "Listado Trabajadores",
+        name: "Personal Activo",
+        icon: <AiOutlineTeam />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Nuevo Trabajador ",
+            icon: <AiOutlineTeam />,
+          },
+          {
+            path: "",
+            name: "Listado Trabajadores",
+            icon: <AiOutlineTeam />,
+          }
+        ],
+      },
+      {
+        path: "/listatareo",
+        name: "Tareo",
         icon: <AiOutlineTeam />,
       },
       {
-        path: "/verTareoHistorico/1",
-        name: "Tareo",
+        path: "/planilla",
+        name: "Planilla",
         icon: <AiOutlineTeam />,
       },
     ],
@@ -65,11 +87,13 @@ const routes = [
         path: "",
         name: "Opción 1",
         icon: <BsFillDiagram2Fill />,
+        subRoutes: []
       },
       {
         path: "",
         name: "Opción 2",
         icon: <BsFillDiagram2Fill />,
+        subRoutes: []
       },
     ],
   },
@@ -83,11 +107,25 @@ const routes = [
         path: "",
         name: "Opción 1",
         icon: <BsWalletFill />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Opción 1",
+            icon: <BsWalletFill />,
+          }
+        ]
       },
       {
         path: "",
         name: "Opción 2",
         icon: <BsWalletFill />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Opción 1",
+            icon: <BsWalletFill />,
+          }
+        ]
       },
     ],
   },
@@ -100,12 +138,26 @@ const routes = [
       {
         path: "",
         name: "Opción 1",
-        icon: <AiOutlineFundProjectionScreen />,
+        icon: <BsWalletFill />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Opción 1",
+            icon: <BsWalletFill />,
+          }
+        ]
       },
       {
         path: "",
         name: "Opción 2",
-        icon: <AiOutlineFundProjectionScreen />,
+        icon: <BsWalletFill />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Opción 1",
+            icon: <BsWalletFill />,
+          }
+        ]
       },
     ],
   },
@@ -118,12 +170,26 @@ const routes = [
       {
         path: "",
         name: "Opción 1",
-        icon: <BsFillFileEarmarkBarGraphFill />,
+        icon: <BsWalletFill />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Opción 1",
+            icon: <BsWalletFill />,
+          }
+        ]
       },
       {
         path: "",
         name: "Opción 2",
-        icon: <BsFillFileEarmarkBarGraphFill />,
+        icon: <BsWalletFill />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Opción 1",
+            icon: <BsWalletFill />,
+          }
+        ]
       },
     ],
   },
@@ -136,12 +202,26 @@ const routes = [
       {
         path: "",
         name: "Opción 1",
-        icon: <MdOutlineSecurity />,
+        icon: <BsWalletFill />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Opción 1",
+            icon: <BsWalletFill />,
+          }
+        ]
       },
       {
         path: "",
         name: "Opción 2",
-        icon: <MdOutlineSecurity />,
+        icon: <BsWalletFill />,
+        subRoutes: [
+          {
+            path: "",
+            name: "Opción 1",
+            icon: <BsWalletFill />,
+          }
+        ]
       },
     ],
   },
@@ -152,11 +232,7 @@ const routes = [
   },
 ];
 
-
-
-
-
-const Sidebar=()=> {
+const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
   const inputAnimation = {
@@ -192,26 +268,25 @@ const Sidebar=()=> {
       },
     },
   };
-let navigate = useNavigate();
-const [cookies, setCookie, removeCookie] = useCookies([
-  "jp_net_time",
-  "jp_net_user",
-  "jp_net_email",
-]);
+  let navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "jp_net_time",
+    "jp_net_user",
+    "jp_net_email",
+  ]);
 
-const onClickExit = () =>{
-  removeCookie("jp_net_user");
-  removeCookie("jp_net_email");
-  alert("HOLAAAA");
-  navigate("/login");
-}
-    
+  const onClickExit = () => {
+    removeCookie("jp_net_user");
+    removeCookie("jp_net_email");
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "260px" : "45px",
+            width: isOpen ? "240px" : "45px",
 
             transition: {
               duration: 2,
@@ -230,7 +305,9 @@ const onClickExit = () =>{
                   animate="show"
                   exit="hidden"
                   className="logo"
-                > <span>JP</span>Ingeneria y Servicios
+                >
+                  {" "}
+                  <span>JP</span>Ingeneria y Servicios
                 </motion.h1>
               )}
             </AnimatePresence>
@@ -244,9 +321,8 @@ const onClickExit = () =>{
                     route={route}
                     showAnimation={showAnimation}
                     isOpen={isOpen}
-                    
+
                   />
-                  
                 );
               }
 
@@ -276,12 +352,14 @@ const onClickExit = () =>{
             })}
             <hr />
 
-            <button className='btnExit'><ImExit /> Salir</button>
+            <button className="btnExit" onClick={onClickExit}>
+              <ImExit /> Salir
+            </button>
           </section>
         </motion.div>
       </div>
     </>
   );
-}
+};
 
 export { Sidebar };
