@@ -3,7 +3,9 @@
     width: 100%;
 }
 .newCandi{
-flex: 6;
+ position: relative;
+      left: 240px;
+    width: calc(100% - 240px);
 }
 .candidate-title{
     -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);

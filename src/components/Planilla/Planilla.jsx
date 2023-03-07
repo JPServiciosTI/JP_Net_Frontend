@@ -19,51 +19,171 @@ import FondoPension from "../Modals/modal_FondoPension/FondoPension";
 const rows = [
   {
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
-    nombres: "Brando Lugger",
-    apellidos: "Pinto Checya",
-    sueldobruto: 1500,
-    bono: 200,
-    remuneracionsasegurable: 1500,
-    totaldescuento: 200,
-    aportefondo: 195,
-    montosaregularizar: 10,
-    essalud: 2,
+    nombres: "Yohanna Merma",
+    sueldobruto: 1700.0,
+    bono: 0,
+    remuneracionsasegurable: 1700.0,
+    aportefondo: 203.49,
+    totaldescuento: 203.49,
+    montosaregularizar: 0,
+    sueldoneto: 1496.51,
+    essalud: 134.64,
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
-    nombres: "Juan Sebastian",
-    apellidos: "Perez Ramirez",
-    sueldobruto: 1500,
-    bono: 200,
-    remuneracionsasegurable: 1500,
-    totaldescuento: 200,
-    aportefondo: 195,
-    montosaregularizar: 10,
-    essalud: 2,
+    nombres: "Catherine Saico",
+    sueldobruto: 1025.0,
+    bono: 0,
+    remuneracionsasegurable: 1025.0,
+    aportefondo: 122.18,
+    totaldescuento: 122.18,
+    montosaregularizar: 0,
+    sueldoneto: 902.82,
+    essalud: 81.25,
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
-    nombres: "Juan Sebastian",
-    apellidos: "Perez Ramirez",
-    sueldobruto: 1500,
-    bono: 200,
-    remuneracionsasegurable: 1500,
-    totaldescuento: 200,
-    aportefondo: 195,
-    montosaregularizar: 10,
-    essalud: 2,
+    nombres: "Edison Quispe",
+    sueldobruto: 1025.0,
+    bono: 0,
+    remuneracionsasegurable: 1025.0,
+    aportefondo: 120.34,
+    totaldescuento: 120.34,
+    montosaregularizar: 0,
+    sueldoneto: 904.67,
+    essalud: 81.42,
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
-    nombres: "Juan Sebastian",
-    apellidos: "Perez Ramirez",
-    sueldobruto: 1500,
-    bono: 200,
-    remuneracionsasegurable: 1500,
-    totaldescuento: 200,
-    aportefondo: 195,
-    montosaregularizar: 10,
-    essalud: 2,
+    nombres: "Mauricio Leiva",
+    sueldobruto: 1025.0,
+    bono: 0,
+    remuneracionsasegurable: 1047.21,
+    aportefondo: 122.94,
+    totaldescuento: 122.94,
+    montosaregularizar: 0,
+    sueldoneto: 924.27,
+    essalud: 83.18,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Christopher Chavez",
+    sueldobruto: 1025.0,
+    bono: 0,
+    remuneracionsasegurable: 1047.21,
+    aportefondo: 136.14,
+    totaldescuento: 136.14,
+    montosaregularizar: 0,
+    sueldoneto: 911.07,
+    essalud: 82.0,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Geraldo Vizcarra",
+    sueldobruto: 1025.0,
+    bono: 0,
+    remuneracionsasegurable: 1025.0,
+    aportefondo: 120.34,
+    totaldescuento: 120.34,
+    montosaregularizar: 0,
+    sueldoneto: 904.67,
+    essalud: 81.42,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Nicolle Castañeda",
+    sueldobruto: 1025.0,
+    bono: 0,
+    remuneracionsasegurable: 1025.0,
+    aportefondo: 120.34,
+    totaldescuento: 120.34,
+    montosaregularizar: 0,
+    sueldoneto: 904.67,
+    essalud: 81.42,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Ximena Gonzales",
+    sueldobruto: 935.91,
+    bono: 0,
+    remuneracionsasegurable: 935.91,
+    aportefondo: 112.03,
+    totaldescuento: 112.03,
+    montosaregularizar: 0,
+    sueldoneto: 823.88,
+    essalud: 74.15,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Camila Quiroz",
+    sueldobruto: 918.63,
+    bono: 0,
+    remuneracionsasegurable: 918.63,
+    aportefondo: 107.85,
+    totaldescuento: 107.85,
+    montosaregularizar: 0,
+    sueldoneto: 810.78,
+    essalud: 72.97,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Luz Yanque",
+    sueldobruto: 574.15,
+    bono: 0,
+    remuneracionsasegurable: 574.15,
+    aportefondo: 67.41,
+    totaldescuento: 67.41,
+    montosaregularizar: 0,
+    sueldoneto: 506.75,
+    essalud: 45.6,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Piero Vizcarra",
+    sueldobruto: 1500.0,
+    bono: 0,
+    remuneracionsasegurable: 1500.0,
+    aportefondo: 176.1,
+    totaldescuento: 426.1,
+    montosaregularizar: 0,
+    sueldoneto: 1073.9,
+    essalud: 96.65,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Brando Pinto",
+    sueldobruto: 1500.0,
+    bono: 0,
+    remuneracionsasegurable: 1500.0,
+    aportefondo: 195.0,
+    totaldescuento: 195.0,
+    montosaregularizar: 0,
+    sueldoneto: 1305.0,
+    essalud: 117.45,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Sergio Barreda",
+    sueldobruto: 1143.68,
+    bono: 0,
+    remuneracionsasegurable: 1143.68,
+    aportefondo: 134.27,
+    totaldescuento: 134.27,
+    montosaregularizar: 0,
+    sueldoneto: 1009.41,
+    essalud: 90.85,
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
+    nombres: "Yesenia Ramirez",
+    sueldobruto: 362.85,
+    bono: 0,
+    remuneracionsasegurable: 465.35,
+    aportefondo: 60.5,
+    totaldescuento: 60.5,
+    montosaregularizar: 0,
+    sueldoneto: 404.85,
+    essalud: 36.44,
   },
 ];
 
@@ -112,9 +232,6 @@ export default function Planilla() {
                 <span>Nombres</span>
               </TableCell>
               <TableCell className="tableCell">
-                <span>Apellidos</span>
-              </TableCell>
-              <TableCell className="tableCell">
                 <span>Sueldo Bruto</span>
               </TableCell>
               <TableCell className="tableCell">
@@ -124,10 +241,10 @@ export default function Planilla() {
                 <span>Remuneración Asegurable</span>
               </TableCell>
               <TableCell className="tableCell">
-                <span>Total Descuento</span>
+                <span>Aporte Fondo</span>
               </TableCell>
               <TableCell className="tableCell">
-                <span>Aporte Fondo</span>
+                <span>Total Descuento</span>
               </TableCell>
               <TableCell className="tableCell">
                 <span>Monstos a Regularizar</span>
@@ -146,9 +263,6 @@ export default function Planilla() {
                     <a href="">{row.nombres}</a>
                   </div>
                 </TableCell>
-                <TableCell align="center" className="tableCell">
-                  <a href="">{row.apellidos}</a>
-                </TableCell>
                 <TableCell align="center" className="tableCell" width={"150px"}>
                   <a href="">{row.sueldobruto}</a>
                   <button onClick={handleShow1} data-toggle="modal1">
@@ -164,12 +278,6 @@ export default function Planilla() {
                 <TableCell className="tableCell btn" align="center">
                   <a href="">{row.remuneracionsasegurable}</a>
                 </TableCell>
-                <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.totaldescuento}</a>
-                  <button onClick={handleShow3} data-toggle="modal3">
-                    <BsFillEyeFill />
-                  </button>
-                </TableCell>
                 <TableCell
                   className="tableCell btn"
                   align="center"
@@ -180,6 +288,13 @@ export default function Planilla() {
                     <BsFillEyeFill />
                   </Button>
                 </TableCell>
+                <TableCell className="tableCell btn" align="center">
+                  <a href="">{row.totaldescuento}</a>
+                  <button onClick={handleShow3} data-toggle="modal3">
+                    <BsFillEyeFill />
+                  </button>
+                </TableCell>
+
                 <TableCell className="tableCell btn" align="center">
                   <a href="">{row.montosaregularizar}</a>
                 </TableCell>
