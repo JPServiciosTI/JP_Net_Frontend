@@ -307,7 +307,7 @@ const Sidebar = () => {
                   className="logo"
                 >
                   {" "}
-                  <span>JP</span>Ingeneria y Servicios
+                  <span>AWL</span>Maquitec
                 </motion.h1>
               )}
             </AnimatePresence>

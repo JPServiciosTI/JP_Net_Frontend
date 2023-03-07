@@ -175,7 +175,7 @@ function TableCandidatos() {
               <TableCell className="tableCell">
                 <div className="cellWrapper">
                   <p>
-                    {row.Nombres} {row.ApellidoPaterno} {row.ApellidoMaterno}
+                  {row.ApellidoPaterno} {row.ApellidoMaterno} {", "} {row.Nombres} 
                   </p>
                 </div>
               </TableCell>

@@ -165,7 +165,7 @@ function PlanillaTable() {
                 <TableCell className="tableCell">
                   <div className="cellWrapper">
                     <img src={"https://picsum.photos/300"} alt="" className="image" />
-                    <a href="">{row.Nombres} {row.ApellidoPaterno} {row.ApellidoMaterno}</a>
+                    <a href="">{row.ApellidoPaterno} {row.ApellidoMaterno} {", "} {row.Nombres} </a>
                   </div>
                 </TableCell>
                 <TableCell align="center" className="tableCell" width={"150px"}>

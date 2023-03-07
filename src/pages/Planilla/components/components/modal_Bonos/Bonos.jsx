@@ -5,7 +5,7 @@ function Bonos() {
   return (
     <form action="">
       <Form.Group className="formTime">
-        <label htmlFor="">Bono declarado:</label>
+        <label htmlFor="">Asignación Familiar:</label>
         <Form.Control className="controlTime" type="number" disabled required />
       </Form.Group>
       <Form.Group className="formTime">

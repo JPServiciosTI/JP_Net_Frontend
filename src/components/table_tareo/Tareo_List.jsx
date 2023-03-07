@@ -35,6 +35,7 @@ function Tareo_List() {
   let cargado = false;
   useEffect(() => {
     if (!cargado) {
+      setDatosTareo([]);
       cargado = true;
       getDatos();
     }
