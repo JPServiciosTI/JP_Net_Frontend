@@ -34,22 +34,22 @@ const routes = [
     icon: <AiOutlineTeam/>,
     subRoutes: [
       {
-        path: "",
+        path: "/newpersonal",
         name: "Nuevo Trabajador ",
         icon: <AiOutlineTeam />,
       },
       {
-        path: "",
+        path: "/newcandidate",
         name: "Nuevo Candidato",
         icon: <AiOutlineTeam />,
       },
       {
-        path: "",
+        path: "/listpersonal",
         name: "Listado Trabajadores",
         icon: <AiOutlineTeam />,
       },
       {
-        path: "",
+        path: "/verTareoHistorico/1",
         name: "Tareo",
         icon: <AiOutlineTeam />,
       },
