@@ -1,15 +1,23 @@
-.listT{
+.listContainer{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
     width: 100%;
 }
-.lgeneral{
-    flex: 6;
-    width: 100%;
-    padding: 0;
-    box-sizing: border-box;
+.listGeneral{
+    position: relative;
+    left: 230px;
+    width: calc(100% - 230px);
+}
+.listBody{
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(189, 200, 230, 0.47);
+    box-shadow: 2px 4px 15px 1px var(--principal-color);
+    padding: 12px;
+    margin: 20px;
+    color: var(--principal-color);
+    font-weight: bold;
+    text-align: center;
 }
 button{
     text-decoration: none;

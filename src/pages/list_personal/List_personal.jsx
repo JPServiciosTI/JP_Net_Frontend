@@ -6,12 +6,12 @@ import './list.css'
 
 function ListPersonalMain() {
   return (
-    <div className='list'>
+    <div className='listContainerP'>
         <Sidebar/>
-      <div className="general">
+      <div className="listGeneralP">
         <Navbar/>
         <div className="listTitle">LISTADO DE PERSONAL</div>
-        <div className="listContainer">
+        <div className="listBodyP">
             
             <ListPP />
         </div>

@@ -6,11 +6,11 @@ import { TableCandidatos } from './components/table_candidato/TableCandidatos'
 
 function ListCandidatosMain() {
   return (
-    <div className='listT'>
+    <div className='listContainer'>
       <Sidebar />
-      <div className="lgeneral">
+      <div className="listGeneral">
         <Navbar />
-        <div className="listContainer">
+        <div className="listBody">
           <TableCandidatos/>
         </div>
       </div>

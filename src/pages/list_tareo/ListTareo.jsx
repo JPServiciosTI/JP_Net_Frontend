@@ -7,11 +7,11 @@ import './list_tareo.css'
 
 function ListTareo() {
   return (
-    <div className='listT'>
+    <div className='listContainerT'>
       <Sidebar />
-      <div className="lgeneral">
+      <div className="listGeneralT">
         <Navbar />
-        <div className="listContainer">
+        <div className="listBodyT">
           <Table_Tareo/>
         </div>
       </div>

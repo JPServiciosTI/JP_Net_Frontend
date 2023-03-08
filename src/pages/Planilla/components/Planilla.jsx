@@ -137,7 +137,7 @@ function PlanillaTable() {
                 <span>Nombres Apellidos</span>
               </TableCell>
               <TableCell className="tableCell">
-                <span>Sueldo Bruto</span>
+                <span>Sueldo Base</span>
               </TableCell>
               <TableCell className="tableCell">
                 <span>Bonos</span>
@@ -146,13 +146,14 @@ function PlanillaTable() {
                 <span>Remuneración Asegurable</span>
               </TableCell>
               <TableCell className="tableCell">
+                <span>Montos a Regularizar</span>
+              </TableCell>
+
+              <TableCell className="tableCell">
                 <span>Total Descuento</span>
               </TableCell>
               <TableCell className="tableCell">
-                <span>Aporte Fondo</span>
-              </TableCell>
-              <TableCell className="tableCell">
-                <span>Monstos a Regularizar</span>
+                <span>Sueldo Neto</span>
               </TableCell>
               <TableCell className="tableCell">
                 <span>EsSalud</span>
@@ -169,41 +170,40 @@ function PlanillaTable() {
                   </div>
                 </TableCell>
                 <TableCell align="center" className="tableCell" width={"150px"}>
-                  <a href="">{row.sueldobruto}</a>
-                  <button onClick={handleShow1} data-toggle="modal1">
-                    <BsFillEyeFill />
-                  </button>
+                  <a href="">{row.SueldoBase}</a>
                 </TableCell>
                 <TableCell align="center" className="tableCell" width={"150px"}>
-                  <a href="">{row.bono}</a>
+                  <a href="">{row.bono || 0}</a>
                   <button onClick={handleShow2} data-toggle="modal2">
                     <BsFillEyeFill />
                   </button>
                 </TableCell>
+                
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.remuneracionsasegurable}</a>
+                  <a href="">{row.Asegurable}</a>
+                  <button onClick={handleShow1} data-toggle="modal1">
+                    <BsFillEyeFill />
+                  </button>
                 </TableCell>
+
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.totaldescuento}</a>
+                  <a href="">{row.montosaregularizar }</a>
                   <button onClick={handleShow3} data-toggle="modal3">
                     <BsFillEyeFill />
                   </button>
                 </TableCell>
-                <TableCell
-                  className="tableCell btn"
-                  align="center"
-                  width={"150px"}
-                >
-                  <a href="">{row.aportefondo}</a>
-                  <Button onClick={handleShow4} data-toggle="modal4">
+
+                <TableCell className="tableCell btn" align="center">
+                  <a href="">{row.TotalDescuentos}</a>
+                  <button onClick={handleShow3} data-toggle="modal3">
                     <BsFillEyeFill />
-                  </Button>
+                  </button>
                 </TableCell>
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.montosaregularizar}</a>
+                  <a href="">{row.NetoTotal }</a>
                 </TableCell>
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.essalud}</a>
+                  <a href="">{row.EsSalud}</a>
                 </TableCell>
               </TableRow>
             ))}

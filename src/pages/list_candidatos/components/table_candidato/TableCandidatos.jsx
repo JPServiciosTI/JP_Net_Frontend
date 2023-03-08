@@ -136,7 +136,7 @@ function TableCandidatos() {
 
   return (
     <TableContainer component={Paper} className="table">
-      <button onClick={handleShow6} data-toggle="modal2" className="botondeanadir" >
+      <button onClick={handleShow6} data-toggle="modal2" className="botonanadir" >
         <BiAddToQueue className="tablei" />
       </button>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -204,7 +204,7 @@ function TableCandidatos() {
               </TableCell>
             </TableRow>
           ))}
-          <Modal show={show2} onHide={handleShow2}>
+          <Modal  show={show2} onHide={handleShow2}>
             <Modal.Header>
               <Modal.Title className="modalTittle">
                 Actualizar Proceso de Candidato
@@ -223,7 +223,7 @@ function TableCandidatos() {
               </Button>
             </Modal.Footer>
           </Modal>
-          <Modal show={show6} onHide={handleShow6}>
+          <Modal size="xl" show={show6} onHide={handleShow6}>
             <Modal.Header>
               <Modal.Title className="modalTittle">
                 Nuevo Candidato
