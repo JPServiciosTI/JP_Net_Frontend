@@ -78,7 +78,7 @@ const LicenciaCon = () => {
         <label htmlFor="">Link:</label>
         <Form.Control
           className="controlTimeE"
-          type="text"
+          type="file"
           required
           onChange={handleChange3}
         />
