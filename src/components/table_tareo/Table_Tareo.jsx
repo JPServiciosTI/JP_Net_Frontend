@@ -12,11 +12,14 @@ import { TbReport } from "react-icons/tb";
 import { NewExtraTime } from "../Modals/modal_Nhoraextra/NewExtraTime";
 import { NewTareo } from "../Modals/modal_Ntareo/NewTareo";
 import { LicenciaCon } from "../Modals/modal_LicenciaCon/LicenciaCon";
-import styled, { css } from "styled-components";
+import { FeriadosTrabajados } from "../Modals/modal_FeriadosTrabajados/FeriadosTrabajados";
 
 import "./table_tareo.css";
 import Calendar from "moedim";
 import { Calendario } from "../Modals/modal_Calendario/Calendario";
+import { Vacaciones } from "../Modals/modal_Vacaciones/Vacaciones";
+import DescansosTrabajados from "../Modals/modal_DescansosTrabajados/DescansosTrabajados";
+import { DescansoMedico } from "../Modals/modal_DescnasoMedico/DescansoMedico";
 
 const hoy = new Date();
 let day = hoy.getDate();
@@ -47,25 +50,35 @@ function Table_Tareo() {
   const handleShow5 = () => setshow5(true);
   const handleClose5 = () => setshow5(false);
 
-  const [value, setValue] = useState(new Date());
+  const [show6, setshow6] = useState(false);
+  const handleShow6 = () => setshow6(true);
+  const handleClose6 = () => setshow6(false);
+
+  const [show7, setshow7] = useState(false);
+  const handleShow7 = () => setshow7(true);
+  const handleClose7 = () => setshow7(false);
+
+  const [show8, setshow8] = useState(false);
+  const handleShow8 = () => setshow8(true);
+  const handleClose8 = () => setshow8(false);
+
+  const [show9, setshow9] = useState(false);
+  const handleShow9 = () => setshow9(true);
+  const handleClose9 = () => setshow9(false);
+
+  /*const [value, setValue] = useState(new Date());
   const StyledCalendar = styled(Calendar)`
     --moedim-primary: #f00;
-  `;
+  `;*/
 
   const rows = [
     {
       img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
       nombres: "Brando Lugger",
-      apellidos: "Pinto Checya",
-      cargo: "TI",
-      cell: () => <button>Registrar</button>,
     },
     {
       img: "https://cdn-icons-png.flaticon.com/512/4128/4128262.png",
       nombres: "Brando Lugger",
-      apellidos: "Pinto Checya",
-      cargo: "TI",
-      cell: () => <button>Registrar</button>,
     },
   ];
 
@@ -78,22 +91,28 @@ function Table_Tareo() {
               <span>Nombres</span>
             </TableCell>
             <TableCell className="tableCell">
-              <span>Apellidos</span>
-            </TableCell>
-            <TableCell className="tableCell">
-              <span>Cargo</span>
-            </TableCell>
-            <TableCell className="tableCell">
               <span>Tareo</span>
             </TableCell>
-            <TableCell className="tableCell">
+            <TableCell align="center" className="tableCell">
               <span>Licencia con</span>
             </TableCell>
-            <TableCell className="tableCell">
+            <TableCell align="center" className="tableCell">
               <span>Licencia sin</span>
             </TableCell>
-            <TableCell className="tableCell">
+            <TableCell text-align="center" className="tableCell">
               <span>Horas extras</span>
+            </TableCell>
+            <TableCell align="center" className="tableCell">
+              <span>Vacaciones</span>
+            </TableCell>
+            <TableCell align="center" className="tableCell">
+              <span>Feriados Trabajados</span>
+            </TableCell>
+            <TableCell align="center" className="tableCell">
+              <span>Descansos Trabajados</span>
+            </TableCell>
+            <TableCell align="center" className="tableCell">
+              <span>Descanso Médico</span>
             </TableCell>
             <TableCell className="tableCell">
               <span>Tareo histórico</span>
@@ -108,12 +127,6 @@ function Table_Tareo() {
                   <img src={row.img} alt="" className="image" />
                   <a href="">{row.nombres}</a>
                 </div>
-              </TableCell>
-              <TableCell align="center" className="tableCell">
-                <a href="">{row.apellidos}</a>
-              </TableCell>
-              <TableCell align="center" className="tableCell">
-                <a href="">{row.cargo}</a>
               </TableCell>
               <TableCell className="tableCell btn" align="center">
                 <button onClick={handleShow2} data-toggle="modal2">
@@ -139,6 +152,31 @@ function Table_Tareo() {
                   <BiAddToQueue className="tablei" />
                 </button>
               </TableCell>
+              <TableCell className="tableCell btn" align="center">
+                <button onClick={handleShow6} data-toggle="modal1">
+                  {row.cell}
+                  <BiAddToQueue className="tablei" />
+                </button>
+              </TableCell>
+              <TableCell className="tableCell btn" align="center">
+                <button onClick={handleShow7} data-toggle="modal1">
+                  {row.cell}
+                  <BiAddToQueue className="tablei" />
+                </button>
+              </TableCell>
+              <TableCell className="tableCell btn" align="center">
+                <button onClick={handleShow8} data-toggle="modal1">
+                  {row.cell}
+                  <BiAddToQueue className="tablei" />
+                </button>
+              </TableCell>
+              <TableCell className="tableCell btn" align="center">
+                <button onClick={handleShow9} data-toggle="modal1">
+                  {row.cell}
+                  <BiAddToQueue className="tablei" />
+                </button>
+              </TableCell>
+
               <TableCell className="tableCell btn" align="center">
                 <button onClick={handleShow5} data-toggle="modal5">
                   {row.cell}
@@ -179,7 +217,7 @@ function Table_Tareo() {
             </Modal.Body>
             <Modal.Footer>
               <Button variant="danger" onClick={handleClose2}>
-                Close
+                Cerrar
               </Button>
             </Modal.Footer>
           </Modal>
@@ -228,6 +266,70 @@ function Table_Tareo() {
             </Modal.Body>
             <Modal.Footer>
               <Button variant="danger" onClick={handleClose5}>
+                {" "}
+                Cerrar
+              </Button>
+            </Modal.Footer>
+            <div id="date-popup" />
+          </Modal>
+          <Modal show={show6} onHide={handleClose6}>
+            <Modal.Header>
+              <Modal.Title className="modalTittle">Vacaciones</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Vacaciones />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="danger" onClick={handleClose6}>
+                {" "}
+                Cerrar
+              </Button>
+            </Modal.Footer>
+            <div id="date-popup" />
+          </Modal>
+          <Modal show={show7} onHide={handleClose7}>
+            <Modal.Header>
+              <Modal.Title className="modalTittle">
+                Feriados Trabajados
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <FeriadosTrabajados />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="danger" onClick={handleClose7}>
+                {" "}
+                Cerrar
+              </Button>
+            </Modal.Footer>
+            <div id="date-popup" />
+          </Modal>
+          <Modal show={show8} onHide={handleClose8}>
+            <Modal.Header>
+              <Modal.Title className="modalTittle">
+                Descansos Trabajados
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <DescansosTrabajados />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="danger" onClick={handleClose8}>
+                {" "}
+                Cerrar
+              </Button>
+            </Modal.Footer>
+            <div id="date-popup" />
+          </Modal>
+          <Modal show={show9} onHide={handleClose9}>
+            <Modal.Header>
+              <Modal.Title className="modalTittle">Descanso Médico</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <DescansoMedico />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="danger" onClick={handleClose9}>
                 {" "}
                 Cerrar
               </Button>

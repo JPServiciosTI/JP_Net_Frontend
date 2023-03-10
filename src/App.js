@@ -10,6 +10,7 @@ import {ListTareo} from './pages/list_tareo/ListTareo';
 import {Calendario} from './components/Modals/modal_Calendario/Calendario';
 import Planilla from './components/Planilla/Planilla';
 import { MainPlanilla } from './pages/Planilla/MainPlanilla';
+import Descuentos from './pages/Descuentos/Descuentos';
 
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
     </Routes>
     <Routes>
         <Route path='/MainPlanilla' element={ <MainPlanilla/>} exact />
+    </Routes>
+      <Routes>
+        <Route path='/Descuentos' element={ <Descuentos/>} exact />
     </Routes>
 
     </BrowserRouter>
