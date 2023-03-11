@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Button } from "react-bootstrap"
+import { useCookies } from 'react-cookie';
+import { post } from '../../../../../services/api/api.service';
 
 const LicenciaSin=()=> {
     const [FechaInicio, setFechaInicio] = useState(0);
@@ -33,7 +35,7 @@ const LicenciaSin=()=> {
       e.preventDefault();
       try {
         const data = await post({
-          url: "/empleado/register/licenciacongoce",
+          url: "/empleado/register/licenciasingoce",
           data: {
             idEmpleado: cookies.jp_net_idEmpleado,
             fechaInicio: FechaInicio,

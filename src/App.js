@@ -9,6 +9,7 @@ import Tareo_List from './components/table_tareo/Tareo_List';
 import { ListCandidatosMain } from './pages/list_candidatos/list_candidatos';
 import "./css/App.css"
 import { MainPlanilla } from './pages/Planilla/MainPlanilla';
+import { Descuentos } from './pages/descuentos/Descuentos';
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
     </Routes>
     <Routes>
         <Route path='/listatareo' element={ <ListTareo/>} exact />
+    </Routes>
+    <Routes>
+        <Route path='/listadescuentos' element={ <Descuentos/>} exact />
     </Routes>
     <Routes>
         <Route path='/listacandidatos' element={ <ListCandidatosMain/>} exact />

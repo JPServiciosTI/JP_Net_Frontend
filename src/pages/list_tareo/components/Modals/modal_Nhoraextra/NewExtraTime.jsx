@@ -6,8 +6,8 @@ import "./newextratime.css";
 
 const NewExtraTime = () => {
   const [Dia, setDia] = useState(0);
-  const [InicioHoraExtra, setInicioHoraExtra] = useState(0);
-  const [FinHoraExtra, setFinHoraExtra] = useState(0);
+  const [Cantidad25, setCantidad25] = useState(0);
+  const [Cantidad35, setCantidad35] = useState(0);
   const [LinkDocumentos, setLinkDocumentos] = useState(0);
 
   const [cookies, setCookie, removeCookie] = useCookies([
@@ -24,16 +24,20 @@ const NewExtraTime = () => {
   const handleChange2 = (event) => {
     const target = event.target;
     const value = target.value;
-    setInicioHoraExtra(value);
+    setCantidad25(value);
   };
 
   const handleChange3 = (event) => {
     const target = event.target;
     const value = target.value;
-    setFinHoraExtra(value);
+    setCantidad35(value);
   };
 
-
+  const handleChange4 = (event) => {
+    const target = event.target;
+    const value = target.value;
+    setLinkDocumentos(value);
+  };
 
 
   useEffect(() => {}, []);
@@ -42,12 +46,12 @@ const NewExtraTime = () => {
     e.preventDefault();
     try {
       const data = await get({
-        url: "/register/horaextra",
+        url: "/empleado/register/horaextra",
         data: {
           idEmpleado: cookies.jp_net_idEmpleado,
           DiaExtra: Dia,
-          horaInicioHoraExtra:  InicioHoraExtra,
-          horaFinHoraExtra:     FinHoraExtra,
+          horaCantidad25:  Cantidad25,
+          horaCantidad35:  Cantidad35,
          },
       });
       if (data.status == "ok") {
@@ -66,14 +70,18 @@ const NewExtraTime = () => {
         <Form.Control className="controlTime" type="date" required onChange={handleChange1} />
       </Form.Group>
       <Form.Group className="formTime">
-        <label htmlFor="">Inicio hora extra:</label>
-        <Form.Control className="controlTime" type="time" required onChange={handleChange2} />
+        <label htmlFor="">Valor de 25%:</label>
+        <Form.Control className="controlTime" type="number" required onChange={handleChange2} />
       </Form.Group>
       <Form.Group className="formTime">
-        <label htmlFor="">Fin hora extra:</label>
-        <Form.Control className="controlTime" type="time" required onChange={handleChange3} />
+        <label htmlFor="">Valor de 35%:</label>
+        <Form.Control className="controlTime" type="number" required onChange={handleChange3} />
       </Form.Group>
-      <Button className="buttonForm" variant="success" type="submit" block onChange={handleSubmit}>
+      <Form.Group className="formTime">
+        <label htmlFor="">Link Documento:</label>
+        <Form.Control className="controlTime" type="input" required onChange={handleChange4} />
+      </Form.Group>
+      <Button className="buttonForm" variant="success" type="submit" block onClick={handleSubmit}>
         Registrar hora extra
       </Button>
     </form>

@@ -71,6 +71,11 @@ const routes = [
         icon: <AiOutlineTeam />,
       },
       {
+        path: "/listadescuentos",
+        name: "Descuentos",
+        icon: <AiOutlineTeam />,
+      },
+      {
         path: "/planilla",
         name: "Planilla",
         icon: <AiOutlineTeam />,
