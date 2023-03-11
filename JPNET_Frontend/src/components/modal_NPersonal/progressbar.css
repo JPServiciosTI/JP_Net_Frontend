@@ -1,0 +1,17 @@
+@import './../../css/paletadecolores.css';
+.indexedStep {
+    color: var(--tipografia-de-contraste-principal-color);
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    background-color: rgba(211, 211, 211, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .indexedStep.accomplished {
+    background-color: var(--animacion-color)
+  }
+  
