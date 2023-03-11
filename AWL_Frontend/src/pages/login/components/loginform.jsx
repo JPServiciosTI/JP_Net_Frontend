@@ -67,7 +67,7 @@ function LoginForm() {
       <div class="signup">
         <div class="signup-connect"></div>
         <div class="signup-classic">
-          <h3>JP NET</h3>
+          <h3>AWL NET</h3>
           <h2>Iniciar Sesión</h2>
           <form class="form" onSubmit={handleSubmit}>
             <input
