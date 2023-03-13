@@ -21,7 +21,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Yohanna Merma",
     sueldobruto: 1700.0,
-    bono: 0,
     remuneracionsasegurable: 1700.0,
     aportefondo: 203.49,
     totaldescuento: 203.49,
@@ -33,7 +32,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Catherine Saico",
     sueldobruto: 1025.0,
-    bono: 0,
     remuneracionsasegurable: 1025.0,
     aportefondo: 122.18,
     totaldescuento: 122.18,
@@ -45,7 +43,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Edison Quispe",
     sueldobruto: 1025.0,
-    bono: 0,
     remuneracionsasegurable: 1025.0,
     aportefondo: 120.34,
     totaldescuento: 120.34,
@@ -57,7 +54,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Mauricio Leiva",
     sueldobruto: 1025.0,
-    bono: 0,
     remuneracionsasegurable: 1047.21,
     aportefondo: 122.94,
     totaldescuento: 122.94,
@@ -69,7 +65,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Christopher Chavez",
     sueldobruto: 1025.0,
-    bono: 0,
     remuneracionsasegurable: 1047.21,
     aportefondo: 136.14,
     totaldescuento: 136.14,
@@ -81,7 +76,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Geraldo Vizcarra",
     sueldobruto: 1025.0,
-    bono: 0,
     remuneracionsasegurable: 1025.0,
     aportefondo: 120.34,
     totaldescuento: 120.34,
@@ -93,7 +87,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Nicolle Castañeda",
     sueldobruto: 1025.0,
-    bono: 0,
     remuneracionsasegurable: 1025.0,
     aportefondo: 120.34,
     totaldescuento: 120.34,
@@ -105,7 +98,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Ximena Gonzales",
     sueldobruto: 935.91,
-    bono: 0,
     remuneracionsasegurable: 935.91,
     aportefondo: 112.03,
     totaldescuento: 112.03,
@@ -117,7 +109,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Camila Quiroz",
     sueldobruto: 918.63,
-    bono: 0,
     remuneracionsasegurable: 918.63,
     aportefondo: 107.85,
     totaldescuento: 107.85,
@@ -129,7 +120,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Luz Yanque",
     sueldobruto: 574.15,
-    bono: 0,
     remuneracionsasegurable: 574.15,
     aportefondo: 67.41,
     totaldescuento: 67.41,
@@ -141,7 +131,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Piero Vizcarra",
     sueldobruto: 1500.0,
-    bono: 0,
     remuneracionsasegurable: 1500.0,
     aportefondo: 176.1,
     totaldescuento: 426.1,
@@ -153,7 +142,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Brando Pinto",
     sueldobruto: 1500.0,
-    bono: 0,
     remuneracionsasegurable: 1500.0,
     aportefondo: 195.0,
     totaldescuento: 195.0,
@@ -165,7 +153,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Sergio Barreda",
     sueldobruto: 1143.68,
-    bono: 0,
     remuneracionsasegurable: 1143.68,
     aportefondo: 134.27,
     totaldescuento: 134.27,
@@ -177,7 +164,6 @@ const rows = [
     img: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
     nombres: "Yesenia Ramirez",
     sueldobruto: 362.85,
-    bono: 0,
     remuneracionsasegurable: 465.35,
     aportefondo: 60.5,
     totaldescuento: 60.5,
@@ -235,9 +221,6 @@ export default function Planilla() {
                 <span>Sueldo Bruto</span>
               </TableCell>
               <TableCell className="tableCell">
-                <span>Bonos</span>
-              </TableCell>
-              <TableCell className="tableCell">
                 <span>Remuneración Asegurable</span>
               </TableCell>
               <TableCell className="tableCell">
@@ -266,12 +249,6 @@ export default function Planilla() {
                 <TableCell align="center" className="tableCell" width={"150px"}>
                   <a href="">{row.sueldobruto}</a>
                   <button onClick={handleShow1} data-toggle="modal1">
-                    <BsFillEyeFill />
-                  </button>
-                </TableCell>
-                <TableCell align="center" className="tableCell" width={"150px"}>
-                  <a href="">{row.bono}</a>
-                  <button onClick={handleShow2} data-toggle="modal2">
                     <BsFillEyeFill />
                   </button>
                 </TableCell>

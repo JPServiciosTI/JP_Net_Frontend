@@ -14,13 +14,7 @@ import { Prestamo } from "../Modals/modal_Prestamo/Prestamo";
 import { DescPrestamos } from "../Modals/modal_DescPrestamosARendir/DescPrestamos";
 import { DescRRHH } from "../Modals/modal_DesRRHH/DescRRHH";
 import { PensionAlimenticia } from "../Modals/modal_PensionAlimentciai/PensionAlimenticia";
-import {
-  GiMoneyStack,
-  GiTakeMyMoney,
-  GiPayMoney,
-  GiWallet,
-  GiHumanPyramid,
-} from "react-icons/gi";
+import { GiTakeMyMoney } from "react-icons/gi";
 function Table_Desc() {
   const [show1, setshow1] = useState(false);
   const handleShow1 = () => setshow1(true);
@@ -114,7 +108,7 @@ function Table_Desc() {
               <TableCell className="tableCell btn" align="center">
                 <button onClick={handleShow1} data-toggle="modal1">
                   {row.cell}
-                  <GiMoneyStack className="tablei" />
+                  <GiTakeMyMoney className="tablei" />
                 </button>
               </TableCell>
               <TableCell className="tableCell btn" align="center">
@@ -126,19 +120,19 @@ function Table_Desc() {
               <TableCell className="tableCell btn" align="center">
                 <button onClick={handleShow3} data-toggle="modal1">
                   {row.cell}
-                  <GiPayMoney className="tablei" />
+                  <GiTakeMyMoney className="tablei" />
                 </button>
               </TableCell>
               <TableCell className="tableCell btn" align="center">
                 <button onClick={handleShow4} data-toggle="modal1">
                   {row.cell}
-                  <GiHumanPyramid className="tablei" />
+                  <GiTakeMyMoney className="tablei" />
                 </button>
               </TableCell>
               <TableCell className="tableCell btn" align="center">
                 <button onClick={handleShow5} data-toggle="modal5">
                   {row.cell}
-                  <GiWallet className="tablei" />
+                  <GiTakeMyMoney className="tablei" />
                 </button>
               </TableCell>
             </TableRow>
