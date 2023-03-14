@@ -232,28 +232,28 @@ function Table_Tareo() {
                   value={row.idEmpleado}
                   onClick={handleShow2}
                   data-toggle="modal2"
-                ></button>
+                >Asistencia</button>
               </TableCell>
               <TableCell className="tableCell btn">
                 <button
                   onClick={handleShow3}
                   value={row.idEmpleado}
                   data-toggle="modal3"
-                ></button>
+                >LCGH</button>
               </TableCell>
               <TableCell className="tableCell btn">
                 <button
                   onClick={handleShow4}
                   data-toggle="modal4"
                   value={row.idEmpleado}
-                ></button>
+                >LSGH</button>
               </TableCell>
               <TableCell className="tableCell btn">
                 <button
                   onClick={handleShow10}
                   data-toggle="modal1"
                   value={row.idEmpleado}
-                ></button>
+                >H.E.</button>
               </TableCell>
               <TableCell
                 className="tableCell btn"
@@ -265,7 +265,7 @@ function Table_Tareo() {
                   data-toggle="modal1"
                   value={row.idEmpleado}
                 >
-                  
+                  Vac.
                 </button>
               </TableCell>
               <TableCell
@@ -278,7 +278,7 @@ function Table_Tareo() {
                   data-toggle="modal1"
                   value={row.idEmpleado}
                 >
-                  
+                  Feriados
                 </button>
               </TableCell>
               <TableCell
@@ -291,7 +291,7 @@ function Table_Tareo() {
                   data-toggle="modal1"
                   value={row.idEmpleado}
                 >
-                  
+                  D. Trabajado
                 </button>
               </TableCell>
               <TableCell
@@ -304,7 +304,7 @@ function Table_Tareo() {
                   data-toggle="modal1"
                   value={row.idEmpleado}
                   key={row.idEmpleado} 
-                >+
+                >D. Medico
                 </button>
               </TableCell>
               <TableCell className="tableCell btn">

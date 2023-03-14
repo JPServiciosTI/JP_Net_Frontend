@@ -77,7 +77,10 @@ function PlanillaTable() {
   const handleClose2 = () => setshow2(false);
 
   const [show3, setshow3] = useState(false);
-  const handleShow3 = () => setshow3(true);
+  const handleShow3 = (e) => {
+    setshow3(true)
+    console.log(e.target.value.Asegurable);
+  };
   const handleClose3 = () => setshow3(false);
 
   const [show4, setshow4] = useState(false);
@@ -127,6 +130,18 @@ function PlanillaTable() {
 
   /* FIn BUSQUEDA DE PERSONA */
 
+  const [QuintaRenta, setQuintaRenta] = useState(0);
+  const [PensionAlimenticia, setPensionAlimenticia] = useState(0);
+  const [Tardanza, setTardanza] = useState(0);
+  const [Faltas, setFaltas] = useState(0);
+  const [Adelantos, setAdelantos] = useState(0);
+  const [Prestamo, setPrestamo] = useState(0);
+  const [AsignacionFamiliar, setAsignacionFamiliar] = useState(0);
+  const [HorasExtra, setHorasExtra] = useState(0);
+  const [Reintegro, setReintegro] = useState(0);
+
+
+
   return (
     <Paper>
       <TableContainer component={Paper} className="table">
@@ -140,15 +155,15 @@ function PlanillaTable() {
                 <span>Sueldo Base</span>
               </TableCell>
               <TableCell className="tableCell">
-                <span>Bonos</span>
+                <span>Tareo Computado</span>
               </TableCell>
               <TableCell className="tableCell">
-                <span>Remuneración Asegurable</span>
+                <span>Compensaciones Adicionales</span>
               </TableCell>
+
               <TableCell className="tableCell">
                 <span>Montos a Regularizar</span>
               </TableCell>
-
               <TableCell className="tableCell">
                 <span>Total Descuento</span>
               </TableCell>
@@ -166,44 +181,43 @@ function PlanillaTable() {
                 <TableCell className="tableCell">
                   <div className="cellWrapper">
                     <img src={"https://picsum.photos/300"} alt="" className="image" />
-                    <a href="">{row.ApellidoPaterno} {row.ApellidoMaterno} {", "} {row.Nombres} </a>
+                    {row.ApellidoPaterno} {row.ApellidoMaterno} {", "} {row.Nombres}
                   </div>
                 </TableCell>
                 <TableCell align="center" className="tableCell" width={"150px"}>
-                  <a href="">{row.SueldoBase}</a>
+                 {row.SueldoBase}
                 </TableCell>
-                <TableCell align="center" className="tableCell" width={"150px"}>
-                  <a href="">{row.bono || 0}</a>
-                  <button onClick={handleShow2} data-toggle="modal2">
-                    <BsFillEyeFill />
-                  </button>
-                </TableCell>
+
                 
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.Asegurable}</a>
+                 {row.Asegurable}
                   <button onClick={handleShow1} data-toggle="modal1">
                     <BsFillEyeFill />
                   </button>
                 </TableCell>
-
+                <TableCell align="center" className="tableCell" width={"150px"}>
+                  {row.bono || 0}
+                  <button onClick={handleShow2} data-toggle="modal2">
+                    <BsFillEyeFill />
+                  </button>
+                </TableCell>
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.montosaregularizar }</a>
+                  {row.montosaregularizar}
                   <button onClick={handleShow3} data-toggle="modal3">
                     <BsFillEyeFill />
                   </button>
                 </TableCell>
 
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.TotalDescuentos}</a>
-                  <button onClick={handleShow3} data-toggle="modal3">
-                    <BsFillEyeFill />
+                  {row.TotalDescuentos}
+                  <button onClick={handleShow3} data-toggle="modal3" value={row}>
                   </button>
                 </TableCell>
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.NetoTotal }</a>
+                  {row.NetoTotal}
                 </TableCell>
                 <TableCell className="tableCell btn" align="center">
-                  <a href="">{row.EsSalud}</a>
+                  {row.EsSalud}
                 </TableCell>
               </TableRow>
             ))}
@@ -223,10 +237,10 @@ function PlanillaTable() {
             </Modal>
             <Modal show={show2} onHide={handleClose2}>
               <Modal.Header closeButton>
-                <Modal.Title className="modalTitle">Bonos</Modal.Title>
+                <Modal.Title className="modalTitle">Compensaciones Adicionales</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <Bonos />
+                <Bonos  />
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="danger" onClick={handleClose2}>
@@ -239,7 +253,14 @@ function PlanillaTable() {
                 <Modal.Title className="modalTitle">Bonos</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <TotalDescuento />
+                <TotalDescuento 
+                QuintaCategoria={QuintaRenta} 
+                PensionAlimenticia={PensionAlimenticia} 
+                Tardanzas={Tardanza}
+                Faltas={Faltas}
+                Adelantos={Adelantos}
+                Prestamo={Prestamo}
+                />
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="danger" onClick={handleClose3}>
