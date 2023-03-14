@@ -13,6 +13,8 @@ import { MainPlanilla } from "./pages/Planilla/MainPlanilla";
 import Descuentos from "./pages/Descuentos/Descuentos";
 import { PrePlanilla } from "./pages/PrePlanilla/PrePlanilla";
 import { Export_Planilla } from "./components/Export_Planilla/Export_Planilla";
+import { PreboletaJP } from "./components/Preboleta/PreboletaJP";
+import PdfPreboleta from "./pages/PDFViewer/PdfPreboleta";
 
 function App() {
   return (
@@ -63,6 +65,12 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/export" element={<Export_Planilla />} exact />
+        </Routes>
+        <Routes>
+          <Route path="/preboleta" element={<PreboletaJP />} exact />
+        </Routes>
+        <Routes>
+          <Route path="/pdf" element={<PdfPreboleta />} exact />
         </Routes>
       </BrowserRouter>
     </div>

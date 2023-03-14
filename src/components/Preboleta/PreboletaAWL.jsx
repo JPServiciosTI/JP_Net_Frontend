@@ -1,43 +1,22 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import "./preboleta.css";
-import {
-  Document,
-  Page,
-  PDFViewer,
-  View,
-  Image,
-  Text,
-} from "@react-pdf/renderer";
-import logoJP from "../../img/logo.jpeg";
 
-function PreboletaJP() {
+function PreboletaAWL() {
   const mesActual = new Intl.DateTimeFormat("es-Es", { month: "long" }).format(
     new Date()
   );
-  const hoy = new Date();
-  let day = hoy.getDate();
-  let month = hoy.getMonth() + 1;
-  let year = hoy.getFullYear();
-  day = ("0" + day).slice(-2);
-  month = ("0" + month).slice(-2);
-  let date = day + "/" + month + "/" + year;
-
   return (
     <div className="tablePreboleta">
       <div class="header">
-        <div className="img">
-          <img className="img_logo" src={logoJP} alt="" />
-        </div>
         <h3>DETALLE DE PAGO {mesActual.toUpperCase()}</h3>
       </div>
       <div class="table">
         <Table>
           <tr>
-            <th className="thHeader">RUC</th>
-            <thcl className="thHeader">RAZÓN SOCIAL</thcl>
-            <th className="thHeader">DIRECCIÓN</th>
-            <th className="thHeader">Fecha</th>
+            <th className="thHeaderA">RUC</th>
+            <th className="thHeaderA">RAZÓN SOCIAL</th>
+            <th className="thHeaderA">DIRECCIÓN</th>
           </tr>
           <tbody>
             <tr>
@@ -46,7 +25,6 @@ function PreboletaJP() {
               <td className="tdBody">
                 JR. ANCASH NRO. 304 URB. ALTO LIBERTAD. AREQUIPA
               </td>
-              <td className="tdBody">{date}</td>
             </tr>
           </tbody>
         </Table>
@@ -54,14 +32,14 @@ function PreboletaJP() {
       <div class="table">
         <Table>
           <tr>
-            <th className="thHeader" colSpan={2}>
+            <th className="thHeadera" colSpan={2}>
               Datos del trabajador
             </th>
           </tr>
           <tr>
-            <th className="thHeader">CÓDIGO</th>
-            <th className="thHeader">APELLIDO</th>
-            <th className="thHeader">NOMBRE</th>
+            <th className="thHeaderA">CÓDIGO</th>
+            <th className="thHeaderA">APELLIDO</th>
+            <th className="thHeaderA">NOMBRE</th>
           </tr>
           <tbody>
             <tr>
@@ -75,27 +53,27 @@ function PreboletaJP() {
       <div class="table">
         <Table>
           <tr>
-            <th className="thHeader" colSpan={8}>
+            <th className="thHeaderA" colSpan={8}>
               DATOS DEL TRABAJADOR VINCULADOS A LA RELACIÓN LABORAL
             </th>
           </tr>
           <tr>
-            <th className="thHeader" colSpan={5}>
+            <th className="thHeaderA" colSpan={5}>
               Días trabajados
             </th>
             <th colSpan={1}></th>
-            <th className="thHeader" colSpan={1}>
+            <th className="thHeaderA" colSpan={1}>
               Sueldo básico
             </th>
           </tr>
           <tr>
-            <th className="thHeader">MMG</th>
-            <th className="thHeader">MCP</th>
-            <th className="thHeader">MCB</th>
-            <th className="thHeader">AREQUIPA</th>
-            <th className="thHeader">Proyectos</th>
+            <th className="thHeaderA">MMG</th>
+            <th className="thHeaderA">MCP</th>
+            <th className="thHeaderA">MCB</th>
+            <th className="thHeaderA">AREQUIPA</th>
+            <th className="thHeaderA">Proyectos</th>
             <th></th>
-            <th className="thHeader"></th>
+            <th className="thHeaderA"></th>
           </tr>
           <tbody>
             <tr>
@@ -245,4 +223,4 @@ function PreboletaJP() {
   );
 }
 
-export { PreboletaJP };
+export default PreboletaAWL;

@@ -1,0 +1,137 @@
+.tablePreboleta{
+  margin: auto;
+  width: 58%;
+  border: 4px solid black;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+.header h3{
+  margin: auto;
+  padding: 2px;
+  font-weight: bold;
+  margin-right: 250px;
+}
+.header{
+  border-bottom: 4px solid black;
+  display: flex;
+}
+.img_logo{
+  width: 100px;
+  height: 70px;
+  padding: 10px;
+  margin-left: 10px;
+}
+.table{
+  padding: 15px;
+  margin: 0;
+}
+.table .thHeaderA{
+  text-align: center;
+  background-color: #436422;
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid black;
+}
+.table .thHeader{
+  text-align: center;
+  background-color: #25294B;
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid black;
+}
+.table .tdBody{
+  border: 2px solid black;
+}
+.table .cod{
+  background: #409B12;
+}
+.tableDetalle{
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+.table1{
+  width: 48%;
+}
+.table1 h5{
+  text-align: center;
+  background-color: #25294B;
+  width: 100%;
+  color: #fff;
+  padding: 5px;
+  margin: 0;
+  border: 2px solid black;
+}
+.table1body{
+  border: 2px solid black;
+  padding: 15px;
+  height: 300px;
+}
+.tdDetalle{
+  padding-left: 10px;
+}
+.tdDetalle .deta{
+  padding-left: 10px;
+}
+.tableFooter{
+   border: 2px solid black;
+   display: flex;
+}
+.tableFooter .box1{
+ text-align: center;
+  background-color: #25294B;
+  width: 70%;
+  color: #fff;
+  padding: 2px;
+  margin: 0;
+  border-right: 2px solid black;
+}
+.tableFooter .box2{
+  width: 30%;
+  text-align: center;
+}
+.neto{
+  border: 2px solid black;
+   display: flex;
+   height: 40px;
+}
+.neto .neto1{
+  text-align: center;
+  font-weight: bolder;
+  background-color: #25294B;
+  width: 70%;
+  color: #fff;
+  padding: 2px;
+  margin: 0;
+  border-bottom: 1px solid black;
+}
+.neto .neto2{
+  width: 30%;
+  text-align: center;
+  background-color: #D6D8D4 ;
+  padding: 2px;
+}
+.observaciones{
+  margin-left: 20px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.observacionesBox{
+  width: 100%;
+  height: 70px;
+  border: 2px solid black;
+}
+.firmasContainer{
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.firmasContainer .firma{
+  width: 50%;
+  padding: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
+}
