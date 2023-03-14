@@ -35,7 +35,7 @@ function PreboletaJP() {
         <Table>
           <tr>
             <th className="thHeader">RUC</th>
-            <thcl className="thHeader">RAZÓN SOCIAL</thcl>
+            <th className="thHeader">RAZÓN SOCIAL</th>
             <th className="thHeader">DIRECCIÓN</th>
             <th className="thHeader">Fecha</th>
           </tr>
