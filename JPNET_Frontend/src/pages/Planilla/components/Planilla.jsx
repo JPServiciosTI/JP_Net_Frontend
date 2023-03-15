@@ -15,6 +15,7 @@ import Bonos from "../components/components/modal_Bonos/Bonos";
 import TotalDescuento from "../components/components/modal_TotalDescuento/TotalDescuento";
 import FondoPension from "../components/components/modal_FondoPension/FondoPension";
 import { get } from "../../../services/api/api.service";
+import { useCookies } from "react-cookie";
 
 const rows = [
   {
@@ -67,19 +68,51 @@ const rows = [
   },
 ];
 
+
+
 function PlanillaTable() {
+
+  const [QuintaRenta, setQuintaRenta] = useState(0);
+  const [PensionAlimenticia, setPensionAlimenticia] = useState(0);
+  const [Tardanza, setTardanza] = useState(0);
+  const [Faltas, setFaltas] = useState(0);
+  const [Adelantos, setAdelantos] = useState(0);
+  const [Prestamo, setPrestamo] = useState(0);
+  const [AsignacionFamiliar, setAsignacionFamiliar] = useState(0);
+  const [HorasExtra, setHorasExtra] = useState(0);
+  const [Reintegro, setReintegro] = useState(0);
+  const [Periodo, setPeriodo] = useState(2);
+  const [DescansoMedico,setDescansoMedico]= useState(0);
+  const [DCGH,setDCGH]= useState(0);
+  const [Vacaciones,setVacaciones]= useState(0);
+
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "jp_net_planilla_idContrato",
+  ]);
+
   const [show1, setshow1] = useState(false);
   const handleShow1 = () => setshow1(true);
   const handleClose1 = () => setshow1(false);
 
   const [show2, setshow2] = useState(false);
-  const handleShow2 = () => setshow2(true);
+  const handleShow2 = (e) => {
+    console.log("Escrito: ",e.target.value)
+    setshow2(true);
+    e.preventDefault();
+    setAsignacionFamiliar(DatosPlanilla[e.target.value].AsignacionFamiliar);
+    setDescansoMedico(DatosPlanilla[e.target.value].DescansoMedico || 0);
+    setDCGH(DatosPlanilla[e.target.value].DiasConGoce || 0);
+    setVacaciones(DatosPlanilla[e.target.value].Vacaciones || 0);
+    setHorasExtra(DatosPlanilla[e.target.value].HorasExtra || 0 );
+    setReintegro(DatosPlanilla[e.target.value].Reintegro || 0);
+  };
   const handleClose2 = () => setshow2(false);
 
   const [show3, setshow3] = useState(false);
   const handleShow3 = (e) => {
-    setshow3(true)
-    console.log(e.target.value.Asegurable);
+    setshow3(true);
+    e.preventDefault();
+    setCookie("jp_net_planilla_idContrato", e.target.value, { path: "/" });
   };
   const handleClose3 = () => setshow3(false);
 
@@ -96,7 +129,7 @@ function PlanillaTable() {
   };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
+    setRowsPerPage(event.target.value);
     setPage(0);
   };
 
@@ -123,23 +156,13 @@ function PlanillaTable() {
       cargado = true;
       getDatos();
     }
+    console.log(DatosPlanilla);
   }, []);
   /* FIN PAGINACIÓN DE TABLAS */
 
   /*BUSQUEDA PERSONA*/
 
   /* FIn BUSQUEDA DE PERSONA */
-
-  const [QuintaRenta, setQuintaRenta] = useState(0);
-  const [PensionAlimenticia, setPensionAlimenticia] = useState(0);
-  const [Tardanza, setTardanza] = useState(0);
-  const [Faltas, setFaltas] = useState(0);
-  const [Adelantos, setAdelantos] = useState(0);
-  const [Prestamo, setPrestamo] = useState(0);
-  const [AsignacionFamiliar, setAsignacionFamiliar] = useState(0);
-  const [HorasExtra, setHorasExtra] = useState(0);
-  const [Reintegro, setReintegro] = useState(0);
-
 
 
   return (
@@ -176,7 +199,7 @@ function PlanillaTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {DatosPlanilla.map((row) => (
+            {DatosPlanilla.map((row,index) => (
               <TableRow key={row.idContrato}>
                 <TableCell className="tableCell">
                   <div className="cellWrapper">
@@ -187,18 +210,15 @@ function PlanillaTable() {
                 <TableCell align="center" className="tableCell" width={"150px"}>
                  {row.SueldoBase}
                 </TableCell>
-
-                
                 <TableCell className="tableCell btn" align="center">
-                 {row.Asegurable}
+                 {row.SueldoTareado}
                   <button onClick={handleShow1} data-toggle="modal1">
                     <BsFillEyeFill />
                   </button>
                 </TableCell>
                 <TableCell align="center" className="tableCell" width={"150px"}>
-                  {row.bono || 0}
-                  <button onClick={handleShow2} data-toggle="modal2">
-                    <BsFillEyeFill />
+                  {row.CompensacionesAdicionales || 0}
+                  <button onClick={handleShow2} data-toggle="modal2" value={index}>
                   </button>
                 </TableCell>
                 <TableCell className="tableCell btn" align="center">
@@ -210,7 +230,7 @@ function PlanillaTable() {
 
                 <TableCell className="tableCell btn" align="center">
                   {row.TotalDescuentos}
-                  <button onClick={handleShow3} data-toggle="modal3" value={row}>
+                  <button onClick={handleShow3} data-toggle="modal3" value={row.idContrato}>
                   </button>
                 </TableCell>
                 <TableCell className="tableCell btn" align="center">
@@ -240,7 +260,7 @@ function PlanillaTable() {
                 <Modal.Title className="modalTitle">Compensaciones Adicionales</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <Bonos  />
+                <Bonos AsignacionFamiliar={AsignacionFamiliar} HorasExtras = {HorasExtra} Reintegro = {Reintegro} />
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="danger" onClick={handleClose2}>
@@ -253,14 +273,7 @@ function PlanillaTable() {
                 <Modal.Title className="modalTitle">Bonos</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <TotalDescuento 
-                QuintaCategoria={QuintaRenta} 
-                PensionAlimenticia={PensionAlimenticia} 
-                Tardanzas={Tardanza}
-                Faltas={Faltas}
-                Adelantos={Adelantos}
-                Prestamo={Prestamo}
-                />
+                <TotalDescuento Periodo={Periodo}/>
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="danger" onClick={handleClose3}>

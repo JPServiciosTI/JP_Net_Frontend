@@ -38,7 +38,7 @@ function Calendario() {
           </div>
 
           <div class="calendar__dates">
-            <div class="calendar__date calendar__date--grey">
+          <div class="calendar__date calendar__date--grey">
               <span>27</span>
             </div>
             <div class="calendar__date calendar__date--grey">
@@ -132,7 +132,7 @@ function Calendario() {
               <span>27</span>
             </div>
             <div class="calendar__date calendar__no">
-              <span>28</span>
+              <span>28/3</span>
             </div>
             <div class="calendar__date calendar__si">
               <span>29</span>
