@@ -14,6 +14,7 @@ import Descuentos from "./pages/Descuentos/Descuentos";
 import { PrePlanilla } from "./pages/PrePlanilla/PrePlanilla";
 import { Export_Planilla } from "./components/Export_Planilla/Export_Planilla";
 import { PreboletaJP } from "./components/Preboleta/PreboletaJP";
+import LoginPreboleta from "./pages/LoginPreboleta/LoginPreboleta";
 
 function App() {
   return (
@@ -67,6 +68,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/preboleta" element={<PreboletaJP />} exact />
+        </Routes>
+        <Routes>
+          <Route path="/loginpreboleta" element={<LoginPreboleta />} exact />
         </Routes>
       </BrowserRouter>
     </div>

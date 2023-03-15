@@ -1,15 +1,18 @@
 .tablePreboleta{
   margin: auto;
-  width: 58%;
+  width: 90%;
+  height: 90%;
   border: 4px solid black;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 80px;
+  font-size: 25px;
 }
 .header h3{
   margin: auto;
   padding: 2px;
+  font-size: 50px;
+  margin-right: 400px;
   font-weight: bold;
-  margin-right: 250px;
 }
 .header{
   border-bottom: 4px solid black;
@@ -65,7 +68,7 @@
 .table1body{
   border: 2px solid black;
   padding: 15px;
-  height: 300px;
+  height: 450px;
 }
 .tdDetalle{
   padding-left: 10px;
@@ -118,7 +121,7 @@
 }
 .observacionesBox{
   width: 100%;
-  height: 70px;
+  height: 300px;
   border: 2px solid black;
 }
 .firmasContainer{
