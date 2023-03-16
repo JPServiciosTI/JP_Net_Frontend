@@ -8,47 +8,136 @@ import "./export.css";
 function Export_Planilla() {
   const data = [
     {
-      id: 1,
-      apellidos: "Pinto Checya",
-      nombre: "Brando",
+      DNI: 70471667,
+      ApellidoPaterno: "Pinto",
+      ApellidoMaterno: "Checya",
+      Nombres: "Brando",
       remuneracionbasica: 1500,
-      pry: "",
-      mcp: "",
-      mcb: "",
-      aqp: "",
-      total: "",
-      sueldobruto: "",
-      monto_dcgh: "",
-      dias_vacas: "",
-      monto_vacas: "",
-      dias_feriados: "",
-      montos_feriados: "",
-      dias_descansos: "",
-      monto_descansos: "",
-      asig_familiar: "",
-      bonos: "",
-      vacaciones_compensacion: "",
-      monto_compensacion: "",
-      he25_horaextra: "",
-      he35_horaextra: "",
-      hora_horaextra: "",
-      remuneracionasegurable: "",
+      pry: 0,
+      mcp: 0,
+      mcb: 0,
+      aqp: 31.0,
+      total: 31.0,
+      sueldobruto: 1500,
+      monto_dcgh: 0,
+      dias_vacas: 0,
+      monto_vacas: 0,
+      dias_feriados: 0,
+      montos_feriados: 0,
+      dias_descansos: 0,
+      monto_descansos: 0,
+      asig_familiar: 120,
+      bonos: 100,
+      vacaciones_compensacion: 0,
+      monto_compensacion: 0,
+      he25_horaextra: 0,
+      he35_horaextra: 0,
+      hora_horaextra: 0,
+      remuneracionasegurable: 1500,
       sistemapensiones: "ONP",
-      habitad: "",
-      integra: "",
-      prima: "",
-      profuturo: "",
-      onp: "",
-      quinta: "",
-      devolucion5ta: "",
-      adelantos: "",
-      prestamos: "",
-      desc_cuentasarendir: "",
-      desc_rrhh: "",
-      pensionalimenticia: "",
-      totaldescuento: "",
-      totalneto: "",
-      totalaporte: "",
+      habitad: 0,
+      integra: 0,
+      prima: 0,
+      profuturo: 0,
+      onp: 195,
+      quinta: 0,
+      devolucion5ta: 0,
+      adelantos: 0,
+      prestamos: 0,
+      desc_cuentasarendir: 0,
+      desc_rrhh: 0,
+      pensionalimenticia: 0,
+      totaldescuento: 0,
+      totalneto: 1305.0,
+      totalaporte: 135.0,
+    },
+    {
+      DNI: 70471667,
+      ApellidoPaterno: "Pinto",
+      ApellidoMaterno: "Checya",
+      Nombres: "Brando",
+      remuneracionbasica: 1500,
+      pry: 0,
+      mcp: 0,
+      mcb: 0,
+      aqp: 31.0,
+      total: 31.0,
+      sueldobruto: 1500,
+      monto_dcgh: 0,
+      dias_vacas: 0,
+      monto_vacas: 0,
+      dias_feriados: 0,
+      montos_feriados: 0,
+      dias_descansos: 0,
+      monto_descansos: 0,
+      asig_familiar: 120,
+      bonos: 100,
+      vacaciones_compensacion: 0,
+      monto_compensacion: 0,
+      he25_horaextra: 0,
+      he35_horaextra: 0,
+      hora_horaextra: 0,
+      remuneracionasegurable: 1500,
+      sistemapensiones: "ONP",
+      habitad: 0,
+      integra: 0,
+      prima: 0,
+      profuturo: 0,
+      onp: 195,
+      quinta: 0,
+      devolucion5ta: 0,
+      adelantos: 0,
+      prestamos: 0,
+      desc_cuentasarendir: 0,
+      desc_rrhh: 0,
+      pensionalimenticia: 0,
+      totaldescuento: 0,
+      totalneto: 1305.0,
+      totalaporte: 135.0,
+    },
+    {
+      DNI: 70471667,
+      ApellidoPaterno: "Pinto",
+      ApellidoMaterno: "Checya",
+      Nombres: "Brando",
+      remuneracionbasica: 1500,
+      pry: 0,
+      mcp: 0,
+      mcb: 0,
+      aqp: 31.0,
+      total: 31.0,
+      sueldobruto: 1500,
+      monto_dcgh: 0,
+      dias_vacas: 0,
+      monto_vacas: 0,
+      dias_feriados: 0,
+      montos_feriados: 0,
+      dias_descansos: 0,
+      monto_descansos: 0,
+      asig_familiar: 120,
+      bonos: 100,
+      vacaciones_compensacion: 0,
+      monto_compensacion: 0,
+      he25_horaextra: 0,
+      he35_horaextra: 0,
+      hora_horaextra: 0,
+      remuneracionasegurable: 1500,
+      sistemapensiones: "ONP",
+      habitad: 0,
+      integra: 0,
+      prima: 0,
+      profuturo: 0,
+      onp: 195,
+      quinta: 0,
+      devolucion5ta: 0,
+      adelantos: 0,
+      prestamos: 0,
+      desc_cuentasarendir: 0,
+      desc_rrhh: 0,
+      pensionalimenticia: 0,
+      totaldescuento: 0,
+      totalneto: 1305.0,
+      totalaporte: 135.0,
     },
   ];
   return (
@@ -174,51 +263,53 @@ function Export_Planilla() {
           <th className="th3"></th>
           <th className="th3"></th>
         </tr>
+
         <tbody>
-          <tr className="trTable">
-            <th>1</th>
-            <th>Pinto Checya</th>
-            <th>Brando</th>
-            <th>1500</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>31.00</th>
-            <th>31.00</th>
-            <th>2200.00</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>1500.00</th>
-            <th>ONP</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>195.00</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>195.00</th>
-            <th>1305.00</th>
-            <th>135.00</th>
-            <th></th>
-          </tr>
+          {data.map((datos) => (
+            <tr className="trTable">
+              <td>{datos.DNI}</td>
+              <td>{datos.ApellidoPaterno + datos.ApellidoMaterno}</td>
+              <td>{datos.Nombres}</td>
+              <td>{datos.remuneracionbasica}</td>
+              <td>{datos.pry}</td>
+              <td>{datos.mcp}</td>
+              <td>{datos.mcb}</td>
+              <td>{datos.aqp}</td>
+              <td>{datos.total}</td>
+              <td>{datos.sueldobruto}</td>
+              <td>{datos.monto_dcgh}</td>
+              <td>{datos.dias_vacas}</td>
+              <td>{datos.monto_vacas}</td>
+              <td>{datos.dias_feriados}</td>
+              <td>{datos.montos_feriados}</td>
+              <td>{datos.dias_descansos}</td>
+              <td>{datos.monto_descansos}</td>
+              <td>{datos.asig_familiar}</td>
+              <td>{datos.bonos}</td>
+              <td>{datos.vacaciones_compensacion}</td>
+              <td>{datos.monto_compensacion}</td>
+              <td>{datos.he25_horaextra}</td>
+              <td>{datos.he35_horaextra}</td>
+              <td>{datos.hora_horaextra}</td>
+              <td>{datos.remuneracionasegurable}</td>
+              <td>{datos.sistemapensiones}</td>
+              <td>{datos.habitad}</td>
+              <td>{datos.integra}</td>
+              <td>{datos.prima}</td>
+              <td>{datos.profuturo}</td>
+              <td>{datos.onp}</td>
+              <td>{datos.quinta}</td>
+              <td>{datos.devolucion5ta}</td>
+              <td>{datos.adelantos}</td>
+              <td>{datos.prestamos}</td>
+              <td>{datos.desc_cuentasarendir}</td>
+              <td>{datos.desc_rrhh}</td>
+              <td>{datos.pensionalimenticia}</td>
+              <td>{datos.totaldescuento}</td>
+              <td>{datos.totalneto}</td>
+              <td>{datos.totalaporte}</td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </>
