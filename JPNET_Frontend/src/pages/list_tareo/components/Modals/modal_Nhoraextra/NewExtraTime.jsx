@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useCookies } from "react-cookie";
-import { get } from "../../../../../services/api/api.service";
+import { get, post } from "../../../../../services/api/api.service";
 import "./newextratime.css";
 
 const NewExtraTime = () => {
@@ -45,13 +45,14 @@ const NewExtraTime = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = await get({
+      const data = await post({
         url: "/empleado/register/horaextra",
         data: {
           idEmpleado: cookies.jp_net_idEmpleado,
-          DiaExtra: Dia,
-          horaCantidad25:  Cantidad25,
-          horaCantidad35:  Cantidad35,
+          Fecha: Dia,
+          Cantidad25:  Cantidad25,
+          Cantidad35:  Cantidad35,
+          linkDocumento: LinkDocumentos
          },
       });
       if (data.status == "ok") {
