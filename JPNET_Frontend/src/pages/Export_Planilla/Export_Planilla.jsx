@@ -184,7 +184,7 @@ function Export_Planilla() {
           <th className="th1" colSpan={3}>
             INFORMACIÓN BÁSICA DE EMPLEADO
           </th>
-          <th className="th1" colSpan={20}>
+          <th className="th1" colSpan={23}>
             TAREO
           </th>
           <th className="th1" colSpan={15}>
@@ -203,10 +203,10 @@ function Export_Planilla() {
           <th className="th2">Apellidos</th>
           <th className="th2">Nombres</th>
           <th className="th2">Remunaeración básica</th>
-          <th className="th2" colSpan={6}>
+          <th className="th2" colSpan={7}>
             Tareado
           </th>
-          <th className="th2" colSpan={1}>
+          <th className="th2" colSpan={2}>
             DCGH
           </th>
           <th className="th2" colSpan={2}>
@@ -216,7 +216,7 @@ function Export_Planilla() {
             Feriados trabajados
           </th>
           <th className="th2" colSpan={2}>
-            Descansos trabajados
+            Descansos Programados
           </th>
           <th className="th2">Asig. Familiar</th>
           <th className="th2">Bonos y otros conceptos</th>
@@ -250,12 +250,14 @@ function Export_Planilla() {
           <th className="th3"></th>
           <th className="th3"></th>
           <th className="th3"></th>
-          <th className="th3">PRY</th>
+          <th className="th3">MMG</th>
           <th className="th3">MCP</th>
           <th className="th3">MCB</th>
           <th className="th3">AQP</th>
+          <th className="th3">PRY</th>
           <th className="th3">Total</th>
           <th className="th3">Sueldo bruto</th>
+          <th className="th3">Días</th>
           <th className="th3">Monto</th>
           <th className="th3">Días</th>
           <th className="th3">Monto</th>
@@ -294,16 +296,17 @@ function Export_Planilla() {
           {DatosPlanilla.map((datos) => (
             <tr className="trTable">
               <td>{datos.DNI}</td>
-              <td>{datos.ApellidoPaterno + datos.ApellidoMaterno}</td>
+              <td>{datos.ApellidoPaterno+ " " + datos.ApellidoMaterno}</td>
               <td>{datos.Nombres}</td>
-              varchar(45)
               <td>{datos.RemuneracionBasica}</td>
-              <td>{datos.PRY}</td>
+              <td>{datos.MMG}</td>
               <td>{datos.MCP}</td>
               <td>{datos.MCB}</td>
               <td>{datos.AQP}</td>
+              <td>{datos.PRY}</td>
               <td>{datos.Total}</td>
               <td>{datos.SueldoBruto}</td>
+              <td>{datos.Dias_DCGH}</td>
               <td>{datos.Monto_DCGH}</td>
               <td>{datos.Dias_Vacaciones}</td>
               <td>{datos.Monto_Vacaciones}</td>
