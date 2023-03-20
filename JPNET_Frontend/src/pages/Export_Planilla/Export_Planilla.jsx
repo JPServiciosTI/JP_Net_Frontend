@@ -322,7 +322,7 @@ function Export_Planilla() {
               <td>{datos.HoraExtra_35}</td>
               <td>{datos.MontoHorasExtras}</td>
               <td>{datos.RemuneracionAsegurable}</td>
-              <td>{datos.sistemapensiones}</td>
+              <td>{datos.NombreDeLaEntidadDeFondo}</td>
               <td>{datos.AFPHabitad}</td>
               <td>{datos.AFPIntegra}</td>
               <td>{datos.AFPPrima}</td>
