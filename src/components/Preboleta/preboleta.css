@@ -1,17 +1,18 @@
+.PreeBol{
+
+}
 .tablePreboleta{
-  margin: auto;
-  width: 90%;
-  height: 90%;
+  padding: 5px;
+  width: 100%;
+  height: 30%;
   border: 4px solid black;
-  margin-top: 50px;
-  margin-bottom: 80px;
-  font-size: 25px;
+  font-size: 16px;
 }
 .header h3{
   margin: auto;
   padding: 2px;
-  font-size: 50px;
-  margin-right: 400px;
+  font-size: 25px;
+  margin-right: 200px;
   font-weight: bold;
 }
 .header{
@@ -19,13 +20,13 @@
   display: flex;
 }
 .img_logo{
-  width: 100px;
-  height: 70px;
+  width: 80px;
+  height: 60px;
   padding: 10px;
   margin-left: 10px;
 }
 .table{
-  padding: 15px;
+  padding: 10px;
   margin: 0;
 }
 .table .thHeaderA{
@@ -68,7 +69,7 @@
 .table1body{
   border: 2px solid black;
   padding: 15px;
-  height: 450px;
+  height: 300px;
 }
 .tdDetalle{
   padding-left: 10px;
@@ -121,15 +122,15 @@
 }
 .observacionesBox{
   width: 100%;
-  height: 300px;
+  height: 100px;
   border: 2px solid black;
 }
 .firmasContainer{
   font-weight: bold;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .firmasContainer .firma{
   width: 50%;

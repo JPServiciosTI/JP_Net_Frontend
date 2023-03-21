@@ -1,8 +1,16 @@
 .calendar {
-  --side-padding: 20px;
-  --border-radius: 34px;
-  --accent-br: 15px;
-  width: 400px;
+  background-color: aqua;
+}
+.calendarMonth{
+  justify-content: center;
+}
+.calendarDay{
+  width: 15%;
+  background-color: yellow;
+}
+.calendarNumber{
+  background-color: violet;
+  font-weight: bold;
 }
 .calendar .select {
   background-color: #f3f4f6;
@@ -107,4 +115,23 @@
   -moz-appearance: none;
   appearance: none;
 }
+
+
+
+.dias-semana {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+}
+
+.dia-semana {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+
+
+
 

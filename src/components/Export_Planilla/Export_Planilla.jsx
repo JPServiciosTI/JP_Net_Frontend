@@ -13,6 +13,7 @@ function Export_Planilla() {
       ApellidoMaterno: "Checya",
       Nombres: "Brando",
       remuneracionbasica: 1500,
+      mmg: 0,
       pry: 0,
       mcp: 0,
       mcb: 0,
@@ -41,7 +42,7 @@ function Export_Planilla() {
       profuturo: 0,
       onp: 195,
       quinta: 0,
-      devolucion5ta: 0,
+      devolucionquinta: 0,
       adelantos: 0,
       prestamos: 0,
       desc_cuentasarendir: 0,
@@ -85,7 +86,7 @@ function Export_Planilla() {
       profuturo: 0,
       onp: 195,
       quinta: 0,
-      devolucion5ta: 0,
+      devolucionquinta: 0,
       adelantos: 0,
       prestamos: 0,
       desc_cuentasarendir: 0,
@@ -129,7 +130,7 @@ function Export_Planilla() {
       profuturo: 0,
       onp: 195,
       quinta: 0,
-      devolucion5ta: 0,
+      devolucionquinta: 0,
       adelantos: 0,
       prestamos: 0,
       desc_cuentasarendir: 0,
@@ -149,6 +150,7 @@ function Export_Planilla() {
           filename="miTablaExcel"
           sheet="Sheet"
           buttonText="Exportar a Excel"
+          style={"./export.css"}
         />
       </div>
 
@@ -177,7 +179,7 @@ function Export_Planilla() {
           <th className="th2">Apellidos</th>
           <th className="th2">Nombres</th>
           <th className="th2">Remunaeración básica</th>
-          <th className="th2" colSpan={6}>
+          <th className="th2" colSpan={7}>
             Tareado
           </th>
           <th className="th2" colSpan={1}>
@@ -224,6 +226,7 @@ function Export_Planilla() {
           <th className="th3"></th>
           <th className="th3"></th>
           <th className="th3"></th>
+          <th className="th3">MMG</th>
           <th className="th3">PRY</th>
           <th className="th3">MCP</th>
           <th className="th3">MCB</th>
@@ -271,6 +274,7 @@ function Export_Planilla() {
               <td>{datos.ApellidoPaterno + datos.ApellidoMaterno}</td>
               <td>{datos.Nombres}</td>
               <td>{datos.remuneracionbasica}</td>
+              <td>{datos.mmg}</td>
               <td>{datos.pry}</td>
               <td>{datos.mcp}</td>
               <td>{datos.mcb}</td>
@@ -299,7 +303,7 @@ function Export_Planilla() {
               <td>{datos.profuturo}</td>
               <td>{datos.onp}</td>
               <td>{datos.quinta}</td>
-              <td>{datos.devolucion5ta}</td>
+              <td>{datos.devolucionquinta}</td>
               <td>{datos.adelantos}</td>
               <td>{datos.prestamos}</td>
               <td>{datos.desc_cuentasarendir}</td>

@@ -1,152 +1,107 @@
-import React from "react";
+import React, { useState } from "react";
 import "./calendario.css";
-
 function Calendario() {
-  const mesActual = new Intl.DateTimeFormat("es-Es", { month: "long" }).format(
-    new Date()
-  );
-  const añoActual = new Date().getFullYear();
+  const [date, setDate] = useState(new Date());
 
+  const daysOfWeek = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"];
+  const monthNames = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+  const daysInMonth = (month, year) => {
+    return new Date(year, month + 1, 0).getDate();
+  };
+
+  const firstDayOfMonth = (month, year) => {
+    return new Date(year, month, 1).getDay();
+  };
+  const handlePrevMonth = () => {
+    setDate(new Date(date.getFullYear(), date.getMonth() - 1));
+  };
+
+  const handleNextMonth = () => {
+    setDate(new Date(date.getFullYear(), date.getMonth() + 1));
+  };
+  const handleDateClick = (day) => {
+    console.log(day);
+  };
+
+  const month = date.getMonth();
+  const year = date.getFullYear();
+
+  const numDaysInMonth = daysInMonth(month, year);
+  const firstDayIndex = firstDayOfMonth(month, year);
+
+  let days = [];
+
+  for (let i = 1; i <= numDaysInMonth; i++) {
+    days.push(i);
+  }
+
+  for (let i = 0; i < firstDayIndex; i++) {
+    days.unshift(null);
+  }
+
+  const rows = [];
+  let cells = [];
+
+  days.forEach((day, index) => {
+    if (index % 7 !== 0) {
+      cells.push(day);
+    } else {
+      rows.push(cells);
+      cells = [day];
+    }
+    if (index === days.length - 1) {
+      rows.push(cells);
+    }
+  });
   return (
-    <>
-      <div class="calendar">
-        <div class="calendar__opts">
-          <select
-            className="select"
-            name="calendar__month"
-            id="calendar__month"
-          >
-            <option selected>
-              {mesActual[0].toUpperCase() + mesActual.substring(1)}
-            </option>
-          </select>
-
-          <select className="select" name="calendar__year" id="calendar__year">
-            <option selected>{añoActual}</option>
-          </select>
-        </div>
-
-        <div class="calendar__body">
-          <div class="calendar__days">
-            <div>Do</div>
-            <div>Lu</div>
-            <div>Ma</div>
-            <div>Mi</div>
-            <div>Ju</div>
-            <div>Vi</div>
-            <div>Sa</div>
-          </div>
-
-          <div class="calendar__dates">
-            <div class="calendar__date calendar__date--grey">
-              <span>27</span>
-            </div>
-            <div class="calendar__date calendar__date--grey">
-              <span>28</span>
-            </div>
-            <div class="calendar__date calendar__date--grey">
-              <span>29</span>
-            </div>
-            <div class="calendar__date calendar__date--grey">
-              <span>30</span>
-            </div>
-            <div class="calendar__date calendar__no">
-              <span>1</span>
-            </div>
-            <div class="calendar__date calendar__no">
-              <span>2</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>3</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>4</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>5</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>6</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>7</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>8</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>9</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>10</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>11</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>12</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>13</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>14</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>15</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>16</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>17</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>18</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>19</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>20</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>21</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>22</span>
-            </div>
-            <div class="calendar__date calendar__no">
-              <span>23</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>24</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>25</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>26</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>27</span>
-            </div>
-            <div class="calendar__date calendar__no">
-              <span>28</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>29</span>
-            </div>
-            <div class="calendar__date calendar__si">
-              <span>30</span>
-            </div>
-            <div class="calendar__date calendar__no">
-              <span>31</span>
-            </div>
-          </div>
-        </div>
+    <div className="calendar">
+      <div className="calendarMonth">
+        <button onClick={handlePrevMonth}>{"<"}</button>
+        <span>
+          {monthNames[month]} {year}
+        </span>
+        <button onClick={handleNextMonth}>{">"}</button>
       </div>
-    </>
+      <table>
+        <thead>
+          <tr>
+            {daysOfWeek.map((day) => (
+              <th className="calendarDay" key={day}>
+                {day}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, index) => (
+            <tr key={index}>
+              {row.map((day, index) => (
+                <td
+                  className="calendarNumber"
+                  key={index}
+                  onClick={() => handleDateClick(day)}
+                >
+                  {day}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
